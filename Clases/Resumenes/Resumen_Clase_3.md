@@ -1,282 +1,225 @@
-# Clase 3 — Operar con datos: vectores y matrices
+# Clase 3 — Operar con datos: vectores y matrices (parte 1: vectores)
 
-**Curso:** BCD3103 Álgebra Lineal y Ecuaciones Diferenciales · Ingeniería en Ciencia de Datos
-**Semana:** 2 · 53 diapositivas
-**Idea central:** *Una matriz mezcla columnas. Proyectar es explicar.*
+**Curso:** BCD3103 Álgebra Lineal y Ecuaciones Diferenciales · Ingeniería en Ciencia de Datos, Lead University
+**Semana:** 2 (la clase anterior fue feriado y esta la reemplaza)
+**PDF fuente:** `Clase 3.pdf` (53 diapositivas)
+**Cobertura del PDF:** Parcial: diapositivas 1 a 14 de 53 (hasta «Práctica 3: verificar, despejar y demostrar»). No se saltó ninguna diapositiva del rango. El resto (combinación lineal, producto punto, matrices, regresión) queda para la siguiente clase; solo se anota la hoja de ruta al final.
 
-> Objetivo de la clase: poder calcular a mano todo lo que NumPy hace con una sola línea.
+**Contexto.** Primera clase de contenido. El objetivo es adquirir el lenguaje matemático (notación, símbolos, vocabulario de demostración) que se usará en Modelado matemático y en los cursos de IA. Al terminar el bloque de vectores se debe poder calcular a mano lo que NumPy hace en una línea.
 
 ---
 
-## Ruta de la clase (4 bloques)
+## 1. Ruta de la clase (diapositiva 2)
 
 | Bloque | Tema | Contenido |
-|---|---|---|
-| 1 | **Vectores** | Definición, suma/resta/escalar, axiomas, combinación lineal |
-| 2 | **Producto punto** | Definición y propiedades, ángulo y ortogonalidad, proyección ortogonal |
-| 3 | **Matrices** | Definición, suma/escalar/transpuesta, matriz × vector, producto de matrices |
-| 4 | **Aplicación** | Regresión como proyección, ecuaciones normales, laboratorio en NumPy |
+|--------|------|-----------|
+| 1 | Vectores | Definición, suma/resta/escalar, principios algebraicos, combinación lineal |
+| 2 | Producto punto | Definición, ángulo y ortogonalidad, proyección ortogonal |
+| 3 | Matrices | Definición, suma/escalar/transpuesta, matriz por vector, producto de matrices |
+| 4 | Aplicación | Regresión como proyección, ecuaciones normales, laboratorio en NumPy |
 
-Cada sección sigue el mismo patrón: **explicación → ejemplos resueltos → práctica → solución**.
+Cada tema sigue el patrón **explicación → ejemplos resueltos → práctica → solución**. Cada bloque depende del anterior.
 
 ---
 
-## Bloque 1 · Vectores
+## 2. Vectores: qué es un vector, desde cero (diapositivas 3–6)
 
 ### Definición
-Un vector es una **lista ordenada de n números reales**:
+
+Un vector es el objeto más básico del curso: una **lista ordenada de $n$ números reales** que representa una observación, una dirección o un conjunto de pesos.
 
 $$\mathbf{v} = (v_1, v_2, \ldots, v_n) \in \mathbb{R}^n$$
 
-- Cada número es una **componente**; $v_i$ es la componente en la posición $i$.
-- **El orden importa:** $(3,2) \neq (2,3)$.
-- La **dimensión** $n$ es la cantidad de componentes. Solo se operan vectores de la misma dimensión.
-- Se interpreta como punto (posición) o flecha desde el origen. Por convención se escribe como columna; su transpuesta $\mathbf{v}^T$ es la fila.
-- El vector cero $\mathbf{0} = (0,\ldots,0)$ es el origen.
+La letra (aquí $\mathbf{v}$) nombra al vector y $\in \mathbb{R}^n$ indica a qué conjunto pertenecen sus valores. No se confunde con teoría de grupos: aquí se habla de conjuntos numéricos.
 
-### Igualdad
-$$\mathbf{u} = \mathbf{v} \iff u_i = v_i \ \forall i$$
+**Igualdad:**
 
-Una igualdad entre vectores de $\mathbb{R}^n$ equivale a **n ecuaciones escalares**, una por componente.
+$$\mathbf{u} = \mathbf{v} \iff u_i = v_i \quad \forall i$$
 
-> ⚠️ Ojo con la indexación: matemáticamente $v_1$ es la primera componente, pero en NumPy sería `v[0]`.
+### Lo que hay que fijar
 
-### Operaciones básicas
-$$\mathbf{u} \pm \mathbf{v} = (u_1 \pm v_1, \ldots, u_n \pm v_n) \qquad k\mathbf{u} = (ku_1, \ldots, ku_n)$$
+- **Ordenada:** el orden importa. $(3,2) \neq (2,3)$; p. ej., un crecimiento económico de $(3,2)$ no es el de $(2,3)$.
+- **Componente:** cada número; $v_i$ es la componente en la posición $i$ y representa algo (una variable, una coordenada).
+- **Dimensión $n$:** cantidad de componentes. $\mathbb{R}^n$ es el conjunto de todos los vectores con $n$ componentes reales.
+- **Solo se comparan u operan vectores de la misma dimensión** (como en álgebra básica, donde solo se combinan términos semejantes).
+- **Punto o flecha, fila o columna:** se interpreta como posición o como flecha desde el origen. Por convención se escribe como columna; su transpuesta $\mathbf{v}^T$ es la fila.
+- **Vector cero:** $\mathbf{0} = (0,\ldots,0)$ es siempre el origen.
+- **Tipo de dato:** casi siempre números reales (coordenadas, temperaturas, precios). Los complejos aparecen en ingeniería específica, p. ej. computación cuántica.
+- **Dimensiones:** algebraicamente se puede trabajar con las dimensiones que se quiera, aunque el ser humano solo perciba hasta la tercera.
 
-- Todo se hace **componente a componente**: nunca se mezclan posiciones.
-- Geometría: $\mathbf{u}+\mathbf{v}$ es la diagonal del paralelogramo; $\mathbf{u}-\mathbf{v}$ es la flecha que va de $\mathbf{v}$ hasta $\mathbf{u}$.
-- El escalar estira ($k>1$), encoge ($0<k<1$) o invierte ($k<0$). La dirección (la recta) no cambia.
-- **Orden de operaciones:** igual que en aritmética — primero escalares, luego sumas.
+**Ejemplo.** La trayectoria de un vuelo Costa Rica–Madrid de 10 h, con la posición guardada cada hora, da una lista de 10 coordenadas: un vector en $\mathbb{R}^{10}$. Es vector cuando ya está la lista completa y ordenada.
 
-### Los 8 axiomas de espacio vectorial
+### Igualdad: qué exige
 
-**De la suma**
+- Misma dimensión **y** mismas componentes en el mismo orden. Tener la misma dimensión no basta.
+- $(1,2,3)$ y $(3,4,5)$ comparten un valor (el 3) pero en posiciones distintas: no son iguales.
+- "Dirección" aún no está definida formalmente (se verá con el producto punto); por ahora un vector es solo la lista de sus componentes.
+- Una igualdad entre vectores de $\mathbb{R}^n$ equivale a **$n$ ecuaciones escalares**, una por componente. Sirve para hallar incógnitas dentro de un vector.
 
-1. Conmutativa: $\mathbf{u}+\mathbf{v} = \mathbf{v}+\mathbf{u}$
-2. Asociativa: $(\mathbf{u}+\mathbf{v})+\mathbf{w} = \mathbf{u}+(\mathbf{v}+\mathbf{w})$
-3. Neutro: $\mathbf{u}+\mathbf{0} = \mathbf{u}$
-4. Opuesto: $\mathbf{u}+(-\mathbf{u}) = \mathbf{0}$
+### Ejemplos resueltos (diapositiva 4)
 
-**Del escalar**
+**1. Leer dimensión y componentes.** Un cliente del dataset de la clase 1: $\mathbf{x} = (34, 12, 480, 5)$ (edad, visitas, gasto, días).
+- Hay 4 componentes, luego $n = 4$ y $\mathbf{x} \in \mathbb{R}^4$ (así se demuestra que algo es de 4 dimensiones).
+- Tercera posición: $x_3 = 480$.
 
-5. Distributiva sobre vectores: $k(\mathbf{u}+\mathbf{v}) = k\mathbf{u}+k\mathbf{v}$
-6. Distributiva sobre escalares: $(k+m)\mathbf{u} = k\mathbf{u}+m\mathbf{u}$
-7. Asociativa de escalares: $k(m\mathbf{u}) = (km)\mathbf{u}$
-8. Identidad: $1\mathbf{u} = \mathbf{u}$
+**2. Igualdad con incógnitas.** Hallar $a$ y $b$ tales que $(a+1,\ 2b) = (4,\,-6)$.
+- Se igualan posiciones: $a+1=4$ y $2b=-6$.
+- Se resuelve cada ecuación por separado (restando/dividiendo a ambos lados): $a=3$, $b=-3$.
+- Verificación: $(3+1,\ 2\cdot(-3)) = (4,-6)$.
 
-Cada axioma se **hereda de los números reales**, porque se opera componente a componente. Un conjunto con suma y escalar que cumple los 8 axiomas es un **espacio vectorial**: $\mathbb{R}^n$ lo es, y también las matrices del mismo tamaño.
+> Matemática vs. programación: en matemáticas la primera posición es la 1 ($x_3$); en Python/NumPy el índice empieza en 0 (`x[2]`). Son lenguajes distintos y hay que manejar ambos.
 
-**Consecuencias demostrables:** $0\cdot\mathbf{u} = \mathbf{0}$ y $(-1)\mathbf{u} = -\mathbf{u}$.
+### Práctica 1 (diapositivas 5–6) — soluciones
 
-> Despejar vectores es idéntico a despejar números, **siempre que no se divida entre un vector** (esa operación no existe).
->
-> Una verificación numérica no demuestra un axioma; solo lo ilustra en un caso particular.
+| Ejercicio | Planteamiento | Resultado |
+|-----------|---------------|-----------|
+| a | $\mathbf{v}=(-2,0,7,1,5)$: contar componentes | $n=5$, $\mathbf{v}\in\mathbb{R}^5$, $v_4=1$ |
+| b | $(2a-1,\ b+3,\ c)=(5,0,-4)$ → $2a-1=5,\ b+3=0,\ c=-4$ | $(a,b,c)=(3,-3,-4)$ |
+| c | Clienta de 29 años, ingreso 850 (miles), 6 compras, 14 meses: $\mathbf{x}=(29,850,6,14)$ con orden (edad, ingreso, compras, meses) | Dimensión 4, punto en $\mathbb{R}^4$ |
+| d | $(1,2)$ vs $(2,1)$: misma dimensión, $u_1\neq v_1$. $(1,2)$ vs $(1,2,0)$: $\mathbb{R}^2$ vs $\mathbb{R}^3$ | Ninguno es igual |
 
-### Combinación lineal, generado y subespacios
-
-$$\mathbf{w} = c_1\mathbf{v}_1 + c_2\mathbf{v}_2 + \cdots + c_k\mathbf{v}_k$$
-
-- Los $c_i$ son los **coeficientes** (pesos). Solo se usan las dos operaciones básicas.
-- **Generado (span):** $\text{gen}\{\mathbf{v}_1,\ldots,\mathbf{v}_k\}$ es todo lo que se puede alcanzar. Con un vector no nulo → una recta por el origen; con dos no paralelos en $\mathbb{R}^2$ → el plano completo.
-- **Subespacio:** $S$ es subespacio si contiene a $\mathbf{0}$ y es cerrado bajo suma y escalar.
-- Preguntar si $\mathbf{w}$ es combinación lineal de otros vectores = **resolver un sistema de ecuaciones**. Si tiene solución, está en el generado; si es inconsistente, no.
-- Un modelo lineal predice con una combinación lineal de variables.
-
-> Para probar que algo **NO** es subespacio basta un contraejemplo; para probar que **SÍ**, hay que verificar las tres condiciones en general.
-> Una recta que no pasa por el origen (ej. $y = 2x+1$) nunca es subespacio: no contiene al vector cero.
+- Para indicar dimensión se escribe $n=5$; para indicar el espacio, $\mathbf{v}\in\mathbb{R}^5$. El nombre del vector puede ser cualquier letra.
+- Si cambia el orden de las variables, cambia el vector.
+- **Antes de operar, preguntarse siempre: ¿qué dimensión tiene cada vector?**
 
 ---
 
-## Bloque 2 · Producto punto
+## 3. Operaciones: sumar, restar y escalar (diapositivas 7–10)
 
-### Definición
-$$\mathbf{u}\cdot\mathbf{v} = \sum_{i=1}^{n} u_i v_i = u_1v_1 + u_2v_2 + \cdots + u_nv_n$$
+Con solo dos operaciones, **suma** y **multiplicación por un escalar**, se construye todo el álgebra lineal del curso.
 
-Multiplicar posición por posición y sumar todo. **Entran dos vectores de la misma dimensión y sale un solo número (escalar).**
+$$\mathbf{u} \pm \mathbf{v} = (u_1 \pm v_1,\ \ldots,\ u_n \pm v_n) \qquad k\,\mathbf{u} = (ku_1,\ \ldots,\ ku_n)$$
 
-### Propiedades
-1. Conmutativa: $\mathbf{u}\cdot\mathbf{v} = \mathbf{v}\cdot\mathbf{u}$
-2. Distributiva: $\mathbf{u}\cdot(\mathbf{v}+\mathbf{w}) = \mathbf{u}\cdot\mathbf{v} + \mathbf{u}\cdot\mathbf{w}$
-3. Saca escalares: $(k\mathbf{u})\cdot\mathbf{v} = k(\mathbf{u}\cdot\mathbf{v})$
-4. Positividad: $\mathbf{v}\cdot\mathbf{v} = \|\mathbf{v}\|^2 \geq 0$
+### Reglas
 
-**Conexión clave con ciencia de datos:** una predicción lineal es un producto punto — $\hat{y} = \mathbf{w}\cdot\mathbf{x}$. Cada peso dice cuánto aporta su variable.
+- **Se opera posición por posición.** La componente $i$ del resultado usa solo las componentes $i$ de los vectores; nunca se mezclan posiciones.
+- Por eso ambos vectores deben tener la misma dimensión: una componente sin pareja quedaría "flotando" sin operarse. Sumar $(1,2)+(1,2,3)$ **no está definido** (NumPy lanza un error de forma, *shape mismatch*).
+- **Orden de operaciones:** igual que en aritmética, primero los escalares y luego las sumas/restas.
+- Escribir cada componente por separado evita la mayoría de errores de signo.
 
-También: la **norma** es un caso particular del producto punto, $\|\mathbf{v}\| = \sqrt{\mathbf{v}\cdot\mathbf{v}}$.
+### Geometría
 
-### Ángulo y ortogonalidad
+- $\mathbf{u}+\mathbf{v}$: poner una flecha tras otra; es la **diagonal del paralelogramo** formado por $\mathbf{u}$ y $\mathbf{v}$.
+- $\mathbf{u}-\mathbf{v}$: la flecha que va de $\mathbf{v}$ hasta $\mathbf{u}$.
+- **Escalar** por $k$: $k>1$ estira; $0<k<1$ encoge (equivale a dividir); $k<0$ invierte el sentido. La recta que contiene al vector no cambia.
+- Solo se grafican vectores de $\mathbb{R}^2$ y $\mathbb{R}^3$ (eje $z$ como tercera dimensión). En más de 3 dimensiones no hay representación directa; se usan técnicas de reducción de dimensiones. En la práctica de IA se trabaja con decenas o cientos de dimensiones.
 
-**Fundamento — ley de cosenos.** En el triángulo formado por $\mathbf{u}$, $\mathbf{v}$ y $\mathbf{u}-\mathbf{v}$:
+**Conexión con ML:** "escalar" variables (p. ej. `scaler` en scikit-learn) busca que magnitudes muy distintas (salario vs. ahorro) se parezcan, para que el modelo no dé más importancia a una variable solo por tener números más grandes.
 
-$$\|\mathbf{u}-\mathbf{v}\|^2 = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 - 2\|\mathbf{u}\|\|\mathbf{v}\|\cos\theta$$
+### Ejemplos resueltos (diapositiva 8)
 
-Expandiendo el lado izquierdo con las propiedades del producto punto:
+**1. Suma y resta en $\mathbb{R}^2$.** $\mathbf{u}=(3,1)$, $\mathbf{v}=(1,2)$:
 
-$$(\mathbf{u}-\mathbf{v})\cdot(\mathbf{u}-\mathbf{v}) = \|\mathbf{u}\|^2 - 2\,\mathbf{u}\cdot\mathbf{v} + \|\mathbf{v}\|^2$$
+$$\mathbf{u}+\mathbf{v}=(3+1,\ 1+2)=(4,3) \qquad \mathbf{u}-\mathbf{v}=(2,-1)$$
 
-Igualando y cancelando queda la fórmula del ángulo:
+**2. Combinar operaciones en $\mathbb{R}^3$.** $\mathbf{u}=(2,-1,4)$, $\mathbf{v}=(1,3,0)$; calcular $3\mathbf{u}-2\mathbf{v}$:
+- Escalar: $3\mathbf{u}=(6,-3,12)$ y $2\mathbf{v}=(2,6,0)$.
+- Restar componente a componente: $(6-2,\ -3-6,\ 12-0)=(4,-9,12)$.
+- El signo menos delante de $2\mathbf{v}$ pertenece a la resta: no cambia los signos de $\mathbf{v}$ antes de restar.
 
-$$\cos\theta = \frac{\mathbf{u}\cdot\mathbf{v}}{\|\mathbf{u}\|\,\|\mathbf{v}\|} \qquad\qquad \mathbf{u} \perp \mathbf{v} \iff \mathbf{u}\cdot\mathbf{v} = 0$$
+### Práctica 2 (diapositivas 9–10) — soluciones
 
-**El signo lo dice todo antes de calcular $\theta$:**
+Con $\mathbf{a}=(1,-2,3)$, $\mathbf{b}=(4,0,-1)$, $\mathbf{c}=(-2,5,2)$:
 
-| Signo de $\mathbf{u}\cdot\mathbf{v}$ | Ángulo |
-|---|---|
-| Positivo | agudo ($\theta < 90°$) |
-| Cero | recto ($\theta = 90°$, ortogonales) |
-| Negativo | obtuso ($\theta > 90°$) |
+| Ejercicio | Resultado |
+|-----------|-----------|
+| a) $\mathbf{a}+\mathbf{b}$ y $\mathbf{b}-\mathbf{c}$ | $(5,-2,2)$ y $(6,-5,-3)$ |
+| b) $-3\mathbf{a}$ y $2\mathbf{a}-\mathbf{b}+\mathbf{c}$ | $(-3,6,-9)$ y $(-4,1,9)$ |
+| c) $\mathbf{x}+\mathbf{a}=\mathbf{b}$ | $\mathbf{x}=\mathbf{b}-\mathbf{a}=(3,2,-4)$ |
+| d) $(1,2)+(1,2,3)$ | No se puede: dimensiones distintas |
 
-> Ortogonal = sin información compartida. Es la idea que sostiene **PCA y la regresión**.
-> Para decidir si dos vectores son ortogonales no hace falta calcular ninguna raíz ni ningún ángulo.
-
-### Proyección ortogonal
-
-**Pregunta:** ¿cuál es la mejor aproximación de $\mathbf{u}$ usando solo la dirección de $\mathbf{v}$?
-
-**Deducción:** buscamos el $c\mathbf{v}$ más cercano a $\mathbf{u}$, es decir, el que deja $\mathbf{r} = \mathbf{u}-c\mathbf{v}$ perpendicular a $\mathbf{v}$:
-
-$$(\mathbf{u}-c\mathbf{v})\cdot\mathbf{v} = 0 \implies \mathbf{u}\cdot\mathbf{v} - c(\mathbf{v}\cdot\mathbf{v}) = 0 \implies c = \frac{\mathbf{u}\cdot\mathbf{v}}{\mathbf{v}\cdot\mathbf{v}}$$
-
-$$\boxed{\ \text{proj}_{\mathbf{v}}\mathbf{u} = \frac{\mathbf{u}\cdot\mathbf{v}}{\mathbf{v}\cdot\mathbf{v}}\,\mathbf{v} \qquad \mathbf{r} = \mathbf{u} - \text{proj}_{\mathbf{v}}\mathbf{u}\ }$$
-
-- La proyección es la **sombra** de $\mathbf{u}$ sobre la recta de $\mathbf{v}$: el punto de esa recta más cercano a $\mathbf{u}$.
-- El **residuo siempre es perpendicular** a $\mathbf{v}$ → $\mathbf{r}\cdot\mathbf{v}=0$ es la mejor comprobación que existe. Si no da cero, hay error de cálculo.
-- $\mathbf{u} = \text{proyección} + \text{residuo perpendicular}$ = parte explicada + parte no explicada.
-- La distancia de $\mathbf{u}$ a la recta de $\mathbf{v}$ es exactamente $\|\mathbf{r}\|$.
-
-**Procedimiento en 3 pasos:** (1) calcular $c$, (2) multiplicar $c$ por $\mathbf{v}$, (3) restar para obtener el residuo. Luego comprobar $\mathbf{r}\cdot\mathbf{v}=0$.
-
-**Casos especiales notables:**
-- Proyectar sobre un eje (ej. $\mathbf{v}=(1,0)$) es simplemente quedarse con esa componente.
-- Proyectar sobre $(1,1,\ldots,1)$ **reemplaza cada dato por el promedio**: el modelo más simple posible.
+Error frecuente: en $\mathbf{b}-\mathbf{c}$ el signo de $\mathbf{c}$ se distribuye, y restar un negativo suma ($4-(-2)=6$).
 
 ---
 
-## Bloque 3 · Matrices
+## 4. Principios algebraicos: las ocho reglas (diapositivas 11–14)
 
-### Definición
-$$A = \begin{bmatrix} a_{11} & \cdots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{m1} & \cdots & a_{mn}\end{bmatrix} \in \mathbb{R}^{m\times n} \qquad (A^T)_{ij} = a_{ji}$$
+Los axiomas de espacio vectorial permiten manipular vectores igual que números: reordenar, agrupar, factorizar y despejar.
 
-- Una matriz es una **tabla rectangular de números**. En datos: cada **fila es una observación** (un vector) y cada **columna una variable**. Un dataset de 1000 clientes y 8 variables es una matriz $1000\times 8$.
-- Notación $a_{ij}$: **primero la fila $i$, después la columna $j$**.
-- La transpuesta intercambia filas por columnas: $m\times n$ pasa a $n\times m$.
+| # | Axioma | Expresión |
+|---|--------|-----------|
+| 1 | Conmutativa | $\mathbf{u}+\mathbf{v}=\mathbf{v}+\mathbf{u}$ |
+| 2 | Asociativa | $(\mathbf{u}+\mathbf{v})+\mathbf{w}=\mathbf{u}+(\mathbf{v}+\mathbf{w})$ |
+| 3 | Neutro (vector cero) | $\mathbf{u}+\mathbf{0}=\mathbf{u}$ |
+| 4 | Opuesto | $\mathbf{u}+(-\mathbf{u})=\mathbf{0}$ |
+| 5 | Distributiva sobre vectores | $k(\mathbf{u}+\mathbf{v})=k\mathbf{u}+k\mathbf{v}$ |
+| 6 | Distributiva sobre escalares | $(k+m)\mathbf{u}=k\mathbf{u}+m\mathbf{u}$ |
+| 7 | Asociativa de escalares | $k(m\mathbf{u})=(km)\mathbf{u}$ |
+| 8 | Identidad | $1\,\mathbf{u}=\mathbf{u}$ |
 
-**Tipos especiales:**
+**Fundamento.** Cada axioma se hereda de los números reales, porque se opera componente a componente y cada componente es un real. Ejemplo (conmutativa):
 
-| Tipo | Condición |
-|---|---|
-| Cuadrada | $m = n$ |
-| Identidad $I_n$ | unos en la diagonal, ceros fuera |
-| Diagonal | ceros fuera de la diagonal |
-| Simétrica | $A = A^T$, es decir $a_{ij} = a_{ji}$ |
+$$\mathbf{u}+\mathbf{v}=(u_1+v_1,\ldots,u_n+v_n)=(v_1+u_1,\ldots,v_n+u_n)=\mathbf{v}+\mathbf{u}$$
 
-### Suma, escalar y transpuesta
-$$(A+B)_{ij} = a_{ij}+b_{ij} \qquad (kA)_{ij} = k\,a_{ij}$$
+Un conjunto con suma y escalar que cumple los 8 axiomas es un **espacio vectorial**. $\mathbb{R}^n$ lo es, y también las matrices del mismo tamaño.
 
-- Igual que con vectores: **entrada por entrada**. Solo se suman matrices de la misma dimensión.
-- Las matrices $m\times n$ también **forman un espacio vectorial** (cumplen los 8 axiomas).
+Reglas que se deducen de los axiomas: $0\cdot\mathbf{u}=\mathbf{0}$ y $(-1)\mathbf{u}=-\mathbf{u}$.
 
-**Propiedades de la transpuesta:**
-$$(A^T)^T = A \qquad (A+B)^T = A^T + B^T \qquad (kA)^T = kA^T$$
+### Ejemplos resueltos (diapositiva 12)
 
-> Una matriz se despeja igual que un vector: con opuestos y escalares, nunca "dividiendo entre una matriz".
-> Conviene despejar primero con letras y sustituir al final.
+**1. Verificar la distributiva.** $k=2$, $\mathbf{u}=(1,3)$, $\mathbf{v}=(4,-1)$; ¿$k(\mathbf{u}+\mathbf{v})=k\mathbf{u}+k\mathbf{v}$?
+- Izquierda (sumar y luego escalar): $2(5,2)=(10,4)$.
+- Derecha (escalar y luego sumar): $(2,6)+(8,-2)=(10,4)$.
+- Coinciden: se cumple.
 
-### Matriz por vector
+**2. Despejar un vector.** Resolver $3\mathbf{x}-\mathbf{u}=2\mathbf{v}$ con $\mathbf{u}=(3,0)$, $\mathbf{v}=(0,6)$. Cada paso lo autoriza un axioma:
 
-**El producto que une todo lo anterior.** Dos lecturas equivalentes:
+| Paso | Justificación |
+|------|---------------|
+| $3\mathbf{x}-\mathbf{u}+\mathbf{u}=2\mathbf{v}+\mathbf{u}$ | sumar $\mathbf{u}$ a ambos lados (opuesto) |
+| $3\mathbf{x}=2\mathbf{v}+\mathbf{u}$ | neutro |
+| $\tfrac13(3\mathbf{x})=\tfrac13(2\mathbf{v}+\mathbf{u})$ | escalar por $\tfrac13$ |
+| $\mathbf{x}=\tfrac13(3,12)=(1,4)$ | asociativa e identidad |
 
-**Por filas (productos punto)**
-$$(A\mathbf{x})_i = \sum_{j=1}^{n} a_{ij}x_j = (\text{fila } i)\cdot\mathbf{x}$$
+- Despejar vectores es idéntico a despejar números, salvo que **no existe la división entre un vector**: se escala por el inverso del escalar (dividir por 3 = multiplicar por $\tfrac13$).
+- Nombrar el axioma de cada paso es lo que convierte un cálculo en una demostración.
 
-**Por columnas (combinación lineal)**
-$$A\mathbf{x} = x_1\mathbf{a}_1 + x_2\mathbf{a}_2 + \cdots + x_n\mathbf{a}_n$$
+### Práctica 3 (diapositivas 13–14): es la tarea
 
-- **Regla de dimensiones:** $(m\times n)\cdot(n) = (m)$. Las columnas de $A$ deben igualar las componentes de $\mathbf{x}$.
-- $A\mathbf{x}$ vive en el **espacio generado por las columnas de $A$** (espacio columna).
-- **En ciencia de datos:** $\hat{\mathbf{y}} = X\mathbf{w}$. $X$ guarda los datos (una fila por observación) y $\mathbf{w}$ los pesos. Un solo producto predice todas las observaciones a la vez.
-- La **columna de unos** en $X$ es la que permite al modelo tener **intercepto**.
+Una verificación numérica no demuestra un axioma; solo lo ilustra en un caso.
 
-### Producto de matrices
+- **a)** Verificar $(k+m)\mathbf{u}=k\mathbf{u}+m\mathbf{u}$ con $k=3$, $m=-1$, $\mathbf{u}=(2,5,-1)$, calculando ambos lados por separado (ambos dan $(4,10,-2)$).
+- **b)** Verificar la asociativa con $\mathbf{u}=(1,2)$, $\mathbf{v}=(-3,4)$, $\mathbf{w}=(0,-5)$ (ambos lados dan $(-2,1)$).
+- **c)** Despejar $\mathbf{x}$ en $2\mathbf{x}+\mathbf{a}=5\mathbf{b}-\mathbf{x}$ con $\mathbf{a}=(3,-6)$, $\mathbf{b}=(1,0)$, nombrando el axioma de cada paso (resultado: $\mathbf{x}=(\tfrac23,2)$).
+- **d)** Demostrar con solo los axiomas que $0\cdot\mathbf{u}=\mathbf{0}$. Pista: escribir $0=0+0$ y usar la distributiva sobre escalares:
 
-$$A_{m\times n}B_{n\times p} = C_{m\times p}, \qquad c_{ij} = \sum_{k=1}^{n} a_{ik}b_{kj}$$
+$$0\mathbf{u}=(0+0)\mathbf{u}=0\mathbf{u}+0\mathbf{u}\ \Rightarrow\ \text{sumar el opuesto de }0\mathbf{u}\ \Rightarrow\ \mathbf{0}=0\mathbf{u}$$
 
-Entrada $(i,j)$ = **fila $i$ de $A$ · columna $j$ de $B$**. Equivale a aplicar "matriz por vector" a cada columna de $B$.
-
-**Propiedades:**
-1. **NO es conmutativo:** $AB \neq BA$ en general (y a veces una de las dos ni existe)
-2. Asociativo: $(AB)C = A(BC)$
-3. Distributivo: $A(B+C) = AB+AC$
-4. Identidad: $AI = IA = A$
-5. Transpuesta del producto (**se invierte el orden**): $(AB)^T = B^TA^T$
-
-> **Regla de oro:** $(m\times n)(n\times p) = (m\times p)$. Las dimensiones internas deben coincidir y desaparecen.
-> Multiplicar por la izquierda transforma **filas**; por la derecha, **columnas**.
+Ejercicio adicional sugerido: probar $(-1)\mathbf{u}=-\mathbf{u}$ con la misma técnica.
 
 ---
 
-## Bloque 4 · Aplicación: la regresión lineal es una proyección ortogonal
+## 5. Por qué importa: vectores y modelos de IA
 
-Con matrices, producto punto y proyección ya se deduce la regresión lineal **sin cálculo diferencial**.
-
-### De la geometría a la fórmula
-
-1. Todo lo que el modelo puede predecir es $X\mathbf{w}$: combinaciones de las columnas de $X$ (su **espacio columna**).
-2. La mejor predicción es la **proyección de $\mathbf{y}$ sobre ese espacio**: el residuo $\mathbf{r} = \mathbf{y}-X\mathbf{w}$ debe ser ortogonal a cada columna de $X$.
-3. "Ortogonal a cada columna" se escribe con la transpuesta, y al despejar aparecen las **ecuaciones normales**:
-
-$$X^T(\mathbf{y}-X\mathbf{w}) = \mathbf{0} \implies \boxed{X^TX\,\mathbf{w} = X^T\mathbf{y}}$$
-
-> **Mínimos cuadrados no es un truco de cálculo: es proyectar.** Minimizar $\|\mathbf{y}-X\mathbf{w}\|^2$ equivale a exigir que el error sea perpendicular a los datos.
->
-> $\mathbf{y} = \text{parte explicada } (\hat{\mathbf{y}}) + \text{residuo } (\mathbf{r})$
-
-### Procedimiento (4 pasos)
-1. Armar $X$ (con columna de unos para el intercepto) y $\mathbf{y}$.
-2. Calcular $X^TX$ y $X^T\mathbf{y}$.
-3. Resolver el sistema de ecuaciones normales para obtener los pesos.
-4. Calcular $\hat{\mathbf{y}}$ y el residuo $\mathbf{r}$; **comprobar que $X^T\mathbf{r} = \mathbf{0}$**.
-
-**Ejemplo resuelto** — puntos $(1,1), (2,2), (3,2)$ con modelo $\hat{y} = a+bx$:
-
-$$X = \begin{bmatrix}1&1\\1&2\\1&3\end{bmatrix},\quad \mathbf{y} = \begin{bmatrix}1\\2\\2\end{bmatrix},\quad X^TX = \begin{bmatrix}3&6\\6&14\end{bmatrix},\quad X^T\mathbf{y} = \begin{bmatrix}5\\11\end{bmatrix}$$
-
-$$\begin{cases}3a+6b=5\\6a+14b=11\end{cases} \implies b = 0{,}5,\ a = \tfrac{2}{3} \implies \hat{y} = 0{,}667 + 0{,}5x$$
-
-Comprobación: $\mathbf{r} = (-0{,}167;\ 0{,}333;\ -0{,}167)$, y $X^T\mathbf{r} = (0,0)$ ✓
-
-**Dato importante:** los residuos **siempre suman cero** cuando el modelo tiene intercepto — es la ortogonalidad con la columna de unos. Y el residuo no tiene relación lineal con $x$.
+- Los datos entran a los modelos como vectores y matrices; un científico de datos debe manejar este lenguaje.
+- **Un registro es un vector.** Un cliente con (visitas, tiempo en el sitio, gasto) $=(10,50,150)$ es un punto/flecha de $\mathbb{R}^3$ desde el origen. Un modelo "ve" una trayectoria numérica, no "clientes" ni "dólares": los patrones que no se notan a simple vista en miles de datos quedan expuestos al convertirlos en vectores.
+- **Redes neuronales:** una imagen son píxeles (una matriz); se procesa por partes (convolución, *pooling*) y al final se aplana (*flatten*) a un vector de una dimensión que alimenta la red. El descenso de gradiente busca el mínimo del error moviéndose en un espacio vectorial de pesos.
+- **Modelos de lenguaje (transformers):** texto → *embeddings* → transformaciones matriciales. Lectura recomendada: *Attention Is All You Need*.
+- La computadora solo lee números; el álgebra lineal es el puente entre el lenguaje humano y el de la máquina.
+- Las reglas de esta clase son las mismas del álgebra de los reales, aplicadas a vectores: no hay "magia nueva".
 
 ---
 
-## Laboratorio en NumPy
+## Conceptos clave
 
-```python
-import numpy as np
+- **Vector:** lista ordenada de $n$ reales; $\mathbf{v}\in\mathbb{R}^n$; el orden importa.
+- **Componente y dimensión:** $v_i$ es la componente $i$; $n$ es la dimensión. Solo se operan vectores de igual dimensión.
+- **Igualdad:** misma dimensión y misma componente en cada posición; equivale a $n$ ecuaciones escalares.
+- **Indexación:** matemáticas desde 1, Python desde 0.
+- **Operaciones:** suma, resta y escalar, siempre componente a componente; primero escalares, luego sumas.
+- **Escalar $k$:** $k>1$ estira, $0<k<1$ encoge, $k<0$ invierte el sentido.
+- **Suma geométrica:** diagonal del paralelogramo; $\mathbf{u}-\mathbf{v}$ va de $\mathbf{v}$ a $\mathbf{u}$.
+- **Ocho axiomas:** cuatro de la suma, cuatro del escalar; heredados de $\mathbb{R}$; definen un espacio vectorial.
+- **Despejar:** sumar el opuesto, escalar por el inverso; nunca dividir entre un vector.
+- **Demostrar:** justificar cada igualdad con el nombre de un axioma.
 
-# vectores y operaciones
-u = np.array([2, -1, 3]); v = np.array([4, 5, -2])
-u + v, 3*u - 2*v          # componente a componente
-u @ v                     # producto punto: -3
+---
 
-# ángulo y proyección
-cos = u @ v / (np.linalg.norm(u) * np.linalg.norm(v))
-proj = (u @ v) / (v @ v) * v
-r = u - proj;  r @ v      # ~0: residuo ortogonal
+## Fuera del PDF — logística, tareas y metodología
 
-# matrices
-A = np.array([[1, 2], [3, 4]]); B = np.array([[0, 1], [1, 0]])
-A.T, A + B, A @ B, B @ A  # AB != BA
-
-# regresión como proyección
-X = np.array([[1, 0], [1, 1], [1, 2]]); y = np.array([1, 3, 4])
-w = np.linalg.solve(X.T @ X, X.T @ y)   # [1.1667, 1.5]
-X.T @ (y - X @ w)                       # [0, 0]
-```
-
-**Qué observar:**
-- `@` es el producto matricial (`u @ v` = producto punto, `A @ B` = producto de matrices). `A * B` multiplica **entrada por entrada**.
-- El residuo sale ortogonal: `r @ v` y `X.T @ (y - X @ w)` dan cero salvo redondeo del orden de `1e-16`.
-- `np.linalg.lstsq(X, y)` debe dar los mismos pesos que las ecuaciones normales.
-- Otros: `B.T` (transpuesta), `B.shape` (dimensión). NumPy lanza error de forma (*shape mismatch*) al sumar vectores de distinta dimensión.
+- **Tarea (Entregable individual 1):** la práctica 3 (diapositiva 13), resuelta **a mano**, paso a paso y con el razonamiento, subida al campus como foto o documento. Se entrega antes de las 16:00 h de la próxima clase (en 8 días). La diapositiva queda publicada en el campus.
+- **Uso de IA:** no usar IA de forma agresiva en estos ejercicios, especialmente en la demostración.
+- **Asistencia:** 3 ausencias implican quedar fuera. Avisar por mensaje cuando se presente algún inconveniente (conexión, trabajo).
+- **Material:** la presentación completa está en el campus; se prepara un documento resumen y videos de práctica adicionales.
+- **Próxima clase:** combinación lineal, producto punto y el resto de la presentación, con el laboratorio en Python/NumPy (unas 2 a 2,5 clases en total hasta llegar a regresión lineal como proyección).
+- **Asesorías:** disponibles bajo solicitud, con sesión agendada por mensaje directo.
