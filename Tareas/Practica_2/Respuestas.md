@@ -6,9 +6,9 @@
 |---|---|
 | Norma | $\lVert\mathbf{v}\rVert=\sqrt{\mathbf{v}\cdot\mathbf{v}}=\sqrt{v_1^2+\cdots+v_n^2}$ |
 | Distancia | $d(\mathbf{u},\mathbf{v})=\lVert\mathbf{u}-\mathbf{v}\rVert$ |
-| Ángulo | $\cos\theta=\dfrac{\mathbf{u}\cdot\mathbf{v}}{\lVert\mathbf{u}\rVert\,\lVert\mathbf{v}\rVert}$ |
+| Ángulo | $\cos\theta=\dfrac{\mathbf{u}\cdot\mathbf{v}}{\lVert\mathbf{u}\rVert\lVert\mathbf{v}\rVert}$ |
 | Ortogonalidad | $\mathbf{u}\perp\mathbf{v}\iff\mathbf{u}\cdot\mathbf{v}=0$ |
-| Proyección | $\operatorname{proj}_{\mathbf{v}}\mathbf{u}=\dfrac{\mathbf{u}\cdot\mathbf{v}}{\mathbf{v}\cdot\mathbf{v}}\,\mathbf{v}$, con residuo $\mathbf{r}=\mathbf{u}-\operatorname{proj}_{\mathbf{v}}\mathbf{u}\perp\mathbf{v}$ |
+| Proyección | $`\mathrm{proj}_{\mathbf{v}}\mathbf{u}=\dfrac{\mathbf{u}\cdot\mathbf{v}}{\mathbf{v}\cdot\mathbf{v}}\mathbf{v}`$, con residuo $`\mathbf{r}=\mathbf{u}-\mathrm{proj}_{\mathbf{v}}\mathbf{u}\perp\mathbf{v}`$ |
 
 ---
 
@@ -32,7 +32,7 @@ $$\lVert\mathbf{w}\rVert=\sqrt{36+64+576}=\sqrt{676}=26$$
 
 Con la propiedad: $\lvert-2\rvert\cdot\lVert\mathbf{u}\rVert=2\cdot13=26$.
 
-**Conclusión:** coinciden, $\lVert k\mathbf{u}\rVert=\lvert k\rvert\,\lVert\mathbf{u}\rVert$. El signo negativo invierte el sentido pero no cambia la longitud.
+**Conclusión:** coinciden, $\lVert k\mathbf{u}\rVert=\lvert k\rvert\cdot\lVert\mathbf{u}\rVert$. El signo negativo invierte el sentido pero no cambia la longitud.
 
 ---
 
@@ -42,13 +42,13 @@ Con la propiedad: $\lvert-2\rvert\cdot\lVert\mathbf{u}\rVert=2\cdot13=26$.
 
 **(a)**
 
-$$A-B=(1-3,\ 2-0,\ 3-4)=(-2,\,2,\,-1)$$
+$$A-B=(1-3,\ 2-0,\ 3-4)=(-2,\ 2,\ -1)$$
 
 $$d(A,B)=\sqrt{4+4+1}=\sqrt{9}=3$$
 
 **(b)**
 
-$$A-C=(1-0,\ 2-2,\ 3-5)=(1,\,0,\,-2)$$
+$$A-C=(1-0,\ 2-2,\ 3-5)=(1,\ 0,\ -2)$$
 
 $$d(A,C)=\sqrt{1+0+4}=\sqrt{5}\approx2{,}236$$
 
@@ -78,7 +78,7 @@ $$\mathbf{b}\cdot\mathbf{c}=4(-1)+1(2)+(-5)(3)=-4+2-15=-17$$
 
 Lado izquierdo:
 
-$$\mathbf{b}+\mathbf{c}=(3,\,3,\,-2)\qquad\mathbf{a}\cdot(\mathbf{b}+\mathbf{c})=6-9-2=-5$$
+$$\mathbf{b}+\mathbf{c}=(3,\ 3,\ -2)\qquad\mathbf{a}\cdot(\mathbf{b}+\mathbf{c})=6-9-2=-5$$
 
 Lado derecho:
 
@@ -141,9 +141,9 @@ Verificación: $(2,3,-2)\cdot(3,2,6)=6+6-12=0$ ✓.
 
 $$(3,4)\cdot(-4,3)=-12+12=0\ \checkmark$$
 
-Para cualquier múltiplo $t\,\mathbf{w}$, con $t\in\mathbb{R}$, se usa la propiedad de sacar escalares:
+Para cualquier múltiplo $t\mathbf{w}$, con $t\in\mathbb{R}$, se usa la propiedad de sacar escalares:
 
-$$(t\,\mathbf{w})\cdot(3,4)=t\,\big(\mathbf{w}\cdot(3,4)\big)=t\cdot0=0$$
+$$(t\mathbf{w})\cdot(3,4)=t\big(\mathbf{w}\cdot(3,4)\big)=t\cdot0=0$$
 
 Todo múltiplo de $(-4,3)$ es ortogonal a $(3,4)$: son los vectores de la recta perpendicular por el origen.
 
@@ -157,11 +157,11 @@ Todo múltiplo de $(-4,3)$ es ortogonal a $(3,4)$: son los vectores de la recta 
 
 $$\mathbf{u}\cdot\mathbf{v}=8+7=15\qquad\mathbf{v}\cdot\mathbf{v}=4+1=5\qquad c=\frac{15}{5}=3$$
 
-$$\operatorname{proj}_{\mathbf{v}}\mathbf{u}=3(2,1)=(6,\,3)$$
+$$\mathrm{proj}_{\mathbf{v}}\mathbf{u}=3(2,1)=(6,\ 3)$$
 
 **(b)**
 
-$$\mathbf{r}=\mathbf{u}-\operatorname{proj}_{\mathbf{v}}\mathbf{u}=(4-6,\ 7-3)=(-2,\,4)$$
+$$\mathbf{r}=\mathbf{u}-\mathrm{proj}_{\mathbf{v}}\mathbf{u}=(4-6,\ 7-3)=(-2,\ 4)$$
 
 $$\mathbf{r}\cdot\mathbf{v}=(-2)(2)+(4)(1)=-4+4=0\ \checkmark$$
 
@@ -181,7 +181,7 @@ Geométricamente, $\lVert\mathbf{r}\rVert$ es la **distancia perpendicular (la m
 
 $$\mathbf{u}\cdot\mathbf{v}=2+6+10=18\qquad\mathbf{v}\cdot\mathbf{v}=3\qquad c=\frac{18}{3}=6$$
 
-$$\operatorname{proj}_{\mathbf{v}}\mathbf{u}=6(1,1,1)=(6,\,6,\,6)$$
+$$\mathrm{proj}_{\mathbf{v}}\mathbf{u}=6(1,1,1)=(6,\ 6,\ 6)$$
 
 **(b)** En general, para $\mathbf{v}=(1,\ldots,1)\in\mathbb{R}^n$:
 
@@ -191,7 +191,7 @@ El coeficiente $c$ es el **promedio (media aritmética)** de las componentes de 
 
 **(c)**
 
-$$\mathbf{r}=\mathbf{u}-\operatorname{proj}_{\mathbf{v}}\mathbf{u}=(2-6,\ 6-6,\ 10-6)=(-4,\,0,\,4)$$
+$$\mathbf{r}=\mathbf{u}-\mathrm{proj}_{\mathbf{v}}\mathbf{u}=(2-6,\ 6-6,\ 10-6)=(-4,\ 0,\ 4)$$
 
 $$\mathbf{r}\cdot\mathbf{v}=-4+0+4=0\ \checkmark$$
 
@@ -282,12 +282,14 @@ El vector más largo es **$\mathbf{d}_2$** (norma 13), pero **no** es el más re
 
 **(b) Similitud coseno**
 
-| Documento | $\mathbf{q}\cdot\mathbf{d}_i$ | $\cos\theta=\dfrac{\mathbf{q}\cdot\mathbf{d}_i}{\lVert\mathbf{q}\rVert\lVert\mathbf{d}_i\rVert}$ |
+| Documento | Producto punto con q | Similitud coseno |
 |---|---|---|
 | $\mathbf{d}_1$ | $18+0+32+0=50$ | $\dfrac{50}{5\cdot10}=1$ |
 | $\mathbf{d}_2$ | $0+0+0+0=0$ | $0$ |
 | $\mathbf{d}_3$ | $12+0+0+0=12$ | $\dfrac{12}{5\cdot5}=0{,}48$ |
 | $\mathbf{d}_4$ | $3+0+4+0=7$ | $\dfrac{7}{5\sqrt2}=\dfrac{7\sqrt2}{10}\approx0{,}990$ |
+
+La similitud coseno es $\cos\theta=\dfrac{\mathbf{q}\cdot\mathbf{d}}{\lVert\mathbf{q}\rVert\lVert\mathbf{d}\rVert}$ para cada documento $\mathbf{d}$.
 
 **(c) Ranking** (de más a menos relevante):
 

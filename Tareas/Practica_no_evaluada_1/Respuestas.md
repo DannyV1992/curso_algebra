@@ -24,21 +24,21 @@ Verificación: $(3+2,\ 3(-2),\ 5-1)=(5,-6,4)$ ✓.
 
 **(a)**
 
-$$\mathbf{u}+\mathbf{v}=(2-1,\ -1+4,\ 3+0)=(1,\,3,\,3)$$
+$$\mathbf{u}+\mathbf{v}=(2-1,\ -1+4,\ 3+0)=(1,\ 3,\ 3)$$
 
-$$\mathbf{u}-\mathbf{v}=(2+1,\ -1-4,\ 3-0)=(3,\,-5,\,3)$$
+$$\mathbf{u}-\mathbf{v}=(2+1,\ -1-4,\ 3-0)=(3,\ -5,\ 3)$$
 
 **(b)**
 
 $$2\mathbf{u}=(4,-2,6)\qquad3\mathbf{v}=(-3,12,0)$$
 
-$$2\mathbf{u}-3\mathbf{v}=(4+3,\ -2-12,\ 6-0)=(7,\,-14,\,6)$$
+$$2\mathbf{u}-3\mathbf{v}=(4+3,\ -2-12,\ 6-0)=(7,\ -14,\ 6)$$
 
 **(c)**
 
 $$-\mathbf{u}=(-2,1,-3)\qquad2\mathbf{v}=(-2,8,0)$$
 
-$$-\mathbf{u}+2\mathbf{v}=(-4,\,9,\,-3)$$
+$$-\mathbf{u}+2\mathbf{v}=(-4,\ 9,\ -3)$$
 
 ---
 
@@ -62,7 +62,7 @@ No se divide entre un vector: se escala por el inverso del escalar.
 
 **(b)** Se sustituyen los datos:
 
-$$2\mathbf{v}=(2,6)\qquad2\mathbf{v}+\mathbf{u}=(6,4)\qquad\mathbf{x}=\tfrac12(6,4)=(3,\,2)$$
+$$2\mathbf{v}=(2,6)\qquad2\mathbf{v}+\mathbf{u}=(6,4)\qquad\mathbf{x}=\tfrac12(6,4)=(3,\ 2)$$
 
 Verificación en la ecuación original:
 
@@ -76,11 +76,11 @@ $$3\mathbf{x}-\mathbf{u}=(9,6)-(4,-2)=(5,8)\qquad\mathbf{x}+2\mathbf{v}=(3,2)+(2
 
 Lado izquierdo:
 
-$$\mathbf{u}+\mathbf{v}=(3,-1,2)\qquad-2(3,-1,2)=(-6,\,2,\,-4)$$
+$$\mathbf{u}+\mathbf{v}=(3,-1,2)\qquad-2(3,-1,2)=(-6,\ 2,\ -4)$$
 
 Lado derecho:
 
-$$k\mathbf{u}=(-2,0,-6)\qquad k\mathbf{v}=(-4,2,2)\qquad k\mathbf{u}+k\mathbf{v}=(-6,\,2,\,-4)$$
+$$k\mathbf{u}=(-2,0,-6)\qquad k\mathbf{v}=(-4,2,2)\qquad k\mathbf{u}+k\mathbf{v}=(-6,\ 2,\ -4)$$
 
 Ambos lados dan $(-6,2,-4)$ ✓.
 
@@ -111,11 +111,11 @@ $$-\mathbf{u}+\mathbf{u}+(-1)\mathbf{u}=-\mathbf{u}+\mathbf{0}\ \Rightarrow\ \ma
 
 $$2(1,0,-1)=(2,0,-2)\qquad-3(2,1,0)=(-6,-3,0)\qquad(0,4,5)$$
 
-$$\text{Suma}=(2-6+0,\ \ 0-3+4,\ \ -2+0+5)=(-4,\,1,\,3)$$
+$$\text{Suma}=(2-6+0,\ \ 0-3+4,\ \ -2+0+5)=(-4,\ 1,\ 3)$$
 
 **(b)**
 
-$$4\mathbf{v}_1=(12,-4)\qquad5\mathbf{v}_2=(-10,10)\qquad4\mathbf{v}_1+5\mathbf{v}_2=(2,\,6)$$
+$$4\mathbf{v}_1=(12,-4)\qquad5\mathbf{v}_2=(-10,10)\qquad4\mathbf{v}_1+5\mathbf{v}_2=(2,\ 6)$$
 
 Los coeficientes son $4$ y $5$.
 
@@ -247,4 +247,4 @@ Verificación: $(2,2,-1)\cdot(3,2,4)=6+4-4=6$ ✓.
 **(c)**
 
 - $\mathbf{u}\cdot(\mathbf{v}\cdot\mathbf{w})$ **no tiene sentido**: $\mathbf{v}\cdot\mathbf{w}$ es un número (escalar) y el producto punto solo se define entre dos vectores de la misma dimensión; no existe "vector · número".
-- $(\mathbf{u}\cdot\mathbf{v})\,\mathbf{w}$ **sí tiene sentido**: $\mathbf{u}\cdot\mathbf{v}$ es un número y al multiplicarlo por el vector $\mathbf{w}$ (escalar por vector) se obtiene un **vector**, múltiplo de $\mathbf{w}$.
+- $(\mathbf{u}\cdot\mathbf{v})\mathbf{w}$ **sí tiene sentido**: $\mathbf{u}\cdot\mathbf{v}$ es un número y al multiplicarlo por el vector $\mathbf{w}$ (escalar por vector) se obtiene un **vector**, múltiplo de $\mathbf{w}$.
