@@ -4,13 +4,13 @@
 
 | Concepto | Fórmula |
 |---|---|
-| Norma | $\lVert\mathbf{v}\rVert=\sqrt{\mathbf{v}\cdot\mathbf{v}}=\sqrt{v_1^2+\cdots+v_n^2}$ |
+| Norma | $`\lVert\mathbf{v}\rVert=\sqrt{\mathbf{v}\cdot\mathbf{v}}=\sqrt{v_1^2+\cdots+v_n^2}`$ |
 | Distancia | $d(\mathbf{u},\mathbf{v})=\lVert\mathbf{u}-\mathbf{v}\rVert$ |
-| Producto punto | $\mathbf{u}\cdot\mathbf{v}=u_1v_1+\cdots+u_nv_n$ |
+| Producto punto | $`\mathbf{u}\cdot\mathbf{v}=u_1v_1+\cdots+u_nv_n`$ |
 | Ángulo | $\cos\theta=\dfrac{\mathbf{u}\cdot\mathbf{v}}{\lVert\mathbf{u}\rVert\lVert\mathbf{v}\rVert}$ |
 | Ortogonalidad | $\mathbf{u}\perp\mathbf{v}\iff\mathbf{u}\cdot\mathbf{v}=0$ |
-| Transpuesta | $(A^\top)_{ij}=a_{ji}$ |
-| Suma y escalar | $(A+B)_{ij}=a_{ij}+b_{ij}$, $\quad(kA)_{ij}=k\cdot a_{ij}$ |
+| Transpuesta | $`(A^\top)_{ij}=a_{ji}`$ |
+| Suma y escalar | $`(A+B)_{ij}=a_{ij}+b_{ij}`$, $`\quad(kA)_{ij}=k\cdot a_{ij}`$ |
 
 ---
 
@@ -103,7 +103,7 @@ $$\cos\theta=\frac{1}{\sqrt2\cdot\sqrt2}=\frac12=0{,}5\ \Rightarrow\ \theta=60^\
 
 **(b)** $\mathbf{u}=(-2,1)$, $\mathbf{v}=(1,-3)$.
 
-Predicción por el signo: $\mathbf{u}\cdot\mathbf{v}=-2-3=-5<0$, por lo tanto el ángulo es **obtuso**.
+Predicción por el signo: $`\mathbf{u}\cdot\mathbf{v}=-2-3=-5<0`$, por lo tanto el ángulo es **obtuso**.
 
 Confirmación:
 
@@ -135,13 +135,13 @@ Cualquier múltiplo de $(-4,3)$ también sirve (los vectores de la recta perpend
 
 ## Ejercicio 6 — Combinación lineal
 
-**Datos:** $\mathbf{w}=(7,11)$, $\mathbf{v}_1=(2,1)$, $\mathbf{v}_2=(1,3)$.
+**Datos:** $\mathbf{w}=(7,11)$, $`\mathbf{v}_1=(2,1)`$, $`\mathbf{v}_2=(1,3)`$.
 
-**(a)** Se plantea $c_1(2,1)+c_2(1,3)=(7,11)$ y se separa por componentes:
+**(a)** Se plantea $`c_1(2,1)+c_2(1,3)=(7,11)`$ y se separa por componentes:
 
 $$\begin{cases}2c_1+c_2=7 & (1)\\ c_1+3c_2=11 & (2)\end{cases}$$
 
-**(b)** Sumar directamente no cancela nada. Se multiplica **toda** la ecuación (1) por $-3$ para que $c_2$ quede con coeficientes opuestos:
+**(b)** Sumar directamente no cancela nada. Se multiplica **toda** la ecuación (1) por $-3$ para que $`c_2`$ quede con coeficientes opuestos:
 
 $$-6c_1-3c_2=-21\qquad(1')$$
 
@@ -149,13 +149,13 @@ Se suma (1') con (2), término a término:
 
 $$-5c_1+0=-10\ \Rightarrow\ c_1=2$$
 
-Se sustituye en (1): $2(2)+c_2=7\Rightarrow c_2=3$.
+Se sustituye en (1): $`2(2)+c_2=7\Rightarrow c_2=3`$.
 
 **(c)** Verificación:
 
 $$2(2,1)+3(1,3)=(4,2)+(3,9)=(7,11)=\mathbf{w}\ \checkmark$$
 
-Resultado: $\mathbf{w}=2\mathbf{v}_1+3\mathbf{v}_2$.
+Resultado: $`\mathbf{w}=2\mathbf{v}_1+3\mathbf{v}_2`$.
 
 ---
 
@@ -167,10 +167,10 @@ $$2c=6,\quad -c=-3,\quad 3c=9\ \Rightarrow\ c=3\ \text{ en las tres posiciones}$
 
 **Sí está** en el generado: $(6,-3,9)=3(2,-1,3)$.
 
-**(b)** Se plantea $c_1(1,0,1)+c_2(0,1,1)=(x,y,z)$, es decir $c_1=x$, $c_2=y$, $c_1+c_2=z$.
+**(b)** Se plantea $`c_1(1,0,1)+c_2(0,1,1)=(x,y,z)`$, es decir $`c_1=x`$, $`c_2=y`$, $`c_1+c_2=z`$.
 
-- Para $(1,2,3)$: $c_1=1$, $c_2=2$, y la tercera ecuación $1+2=3$ ✓. **Sí es combinación lineal**: $(1,2,3)=1(1,0,1)+2(0,1,1)$.
-- Para $(1,2,4)$: $c_1=1$, $c_2=2$, pero la tercera pide $1+2=4$, que es falso. El sistema es inconsistente: **no es combinación lineal**.
+- Para $(1,2,3)$: $`c_1=1`$, $`c_2=2`$, y la tercera ecuación $1+2=3$ ✓. **Sí es combinación lineal**: $(1,2,3)=1(1,0,1)+2(0,1,1)$.
+- Para $(1,2,4)$: $`c_1=1`$, $`c_2=2`$, pero la tercera pide $1+2=4$, que es falso. El sistema es inconsistente: **no es combinación lineal**.
 
 ---
 
@@ -213,9 +213,9 @@ $$A=\begin{bmatrix}2&-1&0&5\\3&4&-2&1\\0&7&6&-3\end{bmatrix}$$
 
 **(a)** $A$ tiene 3 filas y 4 columnas: es de tamaño $3\times4$.
 
-- $a_{23}$ (fila 2, columna 3) $=-2$
-- $a_{14}$ (fila 1, columna 4) $=5$
-- $a_{32}$ (fila 3, columna 2) $=7$
+- $`a_{23}`$ (fila 2, columna 3) $=-2$
+- $`a_{14}`$ (fila 1, columna 4) $=5$
+- $`a_{32}`$ (fila 3, columna 2) $=7$
 
 **(b)**
 
@@ -226,13 +226,13 @@ $$A=\begin{bmatrix}2&-1&0&5\\3&4&-2&1\\0&7&6&-3\end{bmatrix}$$
 
 $$A^\top=\begin{bmatrix}2&3&0\\-1&4&7\\0&-2&6\\5&1&-3\end{bmatrix}$$
 
-Su tamaño es $4\times3$ (la dimensión se invierte). Además $(A^\top)_{41}=a_{14}=5$: es la entrada de la fila 4, columna 1 de $A^\top$, que coincide con $a_{14}$.
+Su tamaño es $4\times3$ (la dimensión se invierte). Además $`(A^\top)_{41}=a_{14}=5`$: es la entrada de la fila 4, columna 1 de $A^\top$, que coincide con $`a_{14}`$.
 
 **(d)**
 
 $$B=\begin{bmatrix}1&4&-2\\4&0&5\\-2&5&3\end{bmatrix}\qquad B^\top=\begin{bmatrix}1&4&-2\\4&0&5\\-2&5&3\end{bmatrix}$$
 
-Se compara entrada por entrada: $b_{12}=b_{21}=4$, $b_{13}=b_{31}=-2$ y $b_{23}=b_{32}=5$. Como $B=B^\top$, **$B$ sí es simétrica**.
+Se compara entrada por entrada: $`b_{12}=b_{21}=4`$, $`b_{13}=b_{31}=-2`$ y $`b_{23}=b_{32}=5`$. Como $B=B^\top$, **$B$ sí es simétrica**.
 
 ---
 
@@ -274,13 +274,13 @@ Ambos lados coinciden ✓.
 
 $$W=\begin{bmatrix}0{,}5&-0{,}2&0{,}8\\1&0{,}3&-0{,}6\end{bmatrix}\quad G_1=\begin{bmatrix}2&-1&4\\-3&0&5\end{bmatrix}\quad G_2=\begin{bmatrix}0&3&-2\\1&-1&-3\end{bmatrix}\quad\eta=0{,}1$$
 
-**(a)** $W$ es de tamaño $2\times3$ (2 neuronas, 3 variables de entrada). La entrada $w_{23}=-0{,}6$ es **el peso con que la neurona 2 usa la variable $x_3$**.
+**(a)** $W$ es de tamaño $2\times3$ (2 neuronas, 3 variables de entrada). La entrada $`w_{23}=-0{,}6`$ es **el peso con que la neurona 2 usa la variable $`x_3`$**.
 
 **(b)** Cada fila de $W$ pasa a ser columna:
 
 $$W^\top=\begin{bmatrix}0{,}5&1\\-0{,}2&0{,}3\\0{,}8&-0{,}6\end{bmatrix}$$
 
-Es de tamaño $3\times2$. Ahora **cada fila corresponde a una variable de entrada** ($x_1$, $x_2$, $x_3$) y muestra los pesos que le dan la neurona 1 y la neurona 2; las columnas son las neuronas.
+Es de tamaño $3\times2$. Ahora **cada fila corresponde a una variable de entrada** ($`x_1`$, $`x_2`$, $`x_3`$) y muestra los pesos que le dan la neurona 1 y la neurona 2; las columnas son las neuronas.
 
 **(c)** Gradiente promedio:
 
@@ -292,15 +292,15 @@ $$\bar{G}=\tfrac12(G_1+G_2)=\begin{bmatrix}1&1&1\\-1&-0{,}5&1\end{bmatrix}$$
 
 $$W_{\text{nueva}}=W-0{,}1\bar{G}=\begin{bmatrix}0{,}5-0{,}1&-0{,}2-0{,}1&0{,}8-0{,}1\\1-(-0{,}1)&0{,}3-(-0{,}05)&-0{,}6-0{,}1\end{bmatrix}=\begin{bmatrix}0{,}4&-0{,}3&0{,}7\\1{,}1&0{,}35&-0{,}7\end{bmatrix}$$
 
-**(e)** La entrada $(3,2)$ de $(W_{\text{nueva}})^\top$ es la entrada $(2,3)$ de $W_{\text{nueva}}$, es decir $-0{,}7$.
+**(e)** La entrada $(3,2)$ de $`(W_{\text{nueva}})^\top`$ es la entrada $(2,3)$ de $`W_{\text{nueva}}`$, es decir $-0{,}7$.
 
-Por el otro lado: $(W^\top)_{32}=w_{23}=-0{,}6$ y $(\bar{G}^\top)_{32}=\bar{g}_{23}=1$, así que
+Por el otro lado: $`(W^\top)_{32}=w_{23}=-0{,}6`$ y $`(\bar{G}^\top)_{32}=\bar{g}_{23}=1`$, así que
 
 $$(W^\top-0{,}1\bar{G}^\top)_{32}=-0{,}6-0{,}1\cdot1=-0{,}7\ \checkmark$$
 
-Coinciden, lo que confirma $(W_{\text{nueva}})^\top=W^\top-0{,}1\bar{G}^\top$ en esa entrada.
+Coinciden, lo que confirma $`(W_{\text{nueva}})^\top=W^\top-0{,}1\bar{G}^\top`$ en esa entrada.
 
-**Interpretación:** el peso que la neurona 2 da a $x_3$ pasó de $-0{,}6$ a $-0{,}7$, es decir, se volvió más negativo. El gradiente promedio en esa posición es positivo ($+1$), y el descenso de gradiente mueve el peso en sentido contrario al gradiente para reducir el error; la tasa $\eta=0{,}1$ controla qué tan grande es ese paso.
+**Interpretación:** el peso que la neurona 2 da a $`x_3`$ pasó de $-0{,}6$ a $-0{,}7$, es decir, se volvió más negativo. El gradiente promedio en esa posición es positivo ($+1$), y el descenso de gradiente mueve el peso en sentido contrario al gradiente para reducir el error; la tasa $\eta=0{,}1$ controla qué tan grande es ese paso.
 
 ---
 
@@ -310,10 +310,10 @@ $$M_1=\begin{bmatrix}90&10\\20&80\end{bmatrix}\qquad M_2=\begin{bmatrix}85&15\\2
 
 Filas: clase real (spam, no spam). Columnas: clase predicha (spam, no spam).
 
-**(a)** $M_1$ es de tamaño $2\times2$.
+**(a)** $`M_1`$ es de tamaño $2\times2$.
 
-- $m_{12}=10$ (fila 1, columna 2): correos **realmente spam** que el modelo **predijo como no spam** (spam que se le escapó al filtro).
-- $m_{21}=20$ (fila 2, columna 1): correos **realmente no spam** que el modelo **predijo como spam** (correos legítimos marcados como spam por error).
+- $`m_{12}=10`$ (fila 1, columna 2): correos **realmente spam** que el modelo **predijo como no spam** (spam que se le escapó al filtro).
+- $`m_{21}=20`$ (fila 2, columna 1): correos **realmente no spam** que el modelo **predijo como spam** (correos legítimos marcados como spam por error).
 
 **(b)**
 
@@ -339,4 +339,4 @@ $$S^\top=\begin{bmatrix}175&45\\25&155\end{bmatrix}$$
 
 La transposición **intercambia filas por columnas**: en $S^\top$ las filas pasan a ser la clase predicha y las columnas la clase real.
 
-Como $(S^\top)_{12}=s_{21}=45$, esa entrada corresponde a $s_{21}$ de $S$: son los **45 correos realmente no spam que el modelo predijo como spam** (falsas alarmas). En $S^\top$ se lee como fila 1 = predicho spam, columna 2 = real no spam.
+Como $`(S^\top)_{12}=s_{21}=45`$, esa entrada corresponde a $`s_{21}`$ de $S$: son los **45 correos realmente no spam que el modelo predijo como spam** (falsas alarmas). En $S^\top$ se lee como fila 1 = predicho spam, columna 2 = real no spam.
