@@ -28,18 +28,22 @@ Cada tema sigue el patrón **explicación → ejemplos resueltos → práctica �
 
 Un vector es el objeto más básico del curso: una **lista ordenada de $n$ números reales** que representa una observación, una dirección o un conjunto de pesos.
 
-$$\mathbf{v} = (v_1, v_2, \ldots, v_n) \in \mathbb{R}^n$$
+```math
+\mathbf{v} = (v_1, v_2, \ldots, v_n) \in \mathbb{R}^n
+```
 
 La letra (aquí $\mathbf{v}$) nombra al vector y $\in \mathbb{R}^n$ indica a qué conjunto pertenecen sus valores. No se confunde con teoría de grupos: aquí se habla de conjuntos numéricos.
 
 **Igualdad:**
 
-$$\mathbf{u} = \mathbf{v} \iff u_i = v_i \quad \forall i$$
+```math
+\mathbf{u} = \mathbf{v} \iff u_i = v_i \quad \forall i
+```
 
 ### Lo que hay que fijar
 
 - **Ordenada:** el orden importa. $(3,2) \neq (2,3)$; p. ej., un crecimiento económico de $(3,2)$ no es el de $(2,3)$.
-- **Componente:** cada número; $v_i$ es la componente en la posición $i$ y representa algo (una variable, una coordenada).
+- **Componente:** cada número; $`v_i`$ es la componente en la posición $i$ y representa algo (una variable, una coordenada).
 - **Dimensión $n$:** cantidad de componentes. $\mathbb{R}^n$ es el conjunto de todos los vectores con $n$ componentes reales.
 - **Solo se comparan u operan vectores de la misma dimensión** (como en álgebra básica, donde solo se combinan términos semejantes).
 - **Punto o flecha, fila o columna:** se interpreta como posición o como flecha desde el origen. Por convención se escribe como columna; su transpuesta $\mathbf{v}^T$ es la fila.
@@ -60,23 +64,23 @@ $$\mathbf{u} = \mathbf{v} \iff u_i = v_i \quad \forall i$$
 
 **1. Leer dimensión y componentes.** Un cliente del dataset de la clase 1: $\mathbf{x} = (34, 12, 480, 5)$ (edad, visitas, gasto, días).
 - Hay 4 componentes, luego $n = 4$ y $\mathbf{x} \in \mathbb{R}^4$ (así se demuestra que algo es de 4 dimensiones).
-- Tercera posición: $x_3 = 480$.
+- Tercera posición: $`x_3 = 480`$.
 
-**2. Igualdad con incógnitas.** Hallar $a$ y $b$ tales que $(a+1,\ 2b) = (4,\,-6)$.
+**2. Igualdad con incógnitas.** Hallar $a$ y $b$ tales que $`(a+1,\ 2b) = (4,\,-6)`$.
 - Se igualan posiciones: $a+1=4$ y $2b=-6$.
 - Se resuelve cada ecuación por separado (restando/dividiendo a ambos lados): $a=3$, $b=-3$.
 - Verificación: $(3+1,\ 2\cdot(-3)) = (4,-6)$.
 
-> Matemática vs. programación: en matemáticas la primera posición es la 1 ($x_3$); en Python/NumPy el índice empieza en 0 (`x[2]`). Son lenguajes distintos y hay que manejar ambos.
+> Matemática vs. programación: en matemáticas la primera posición es la 1 ($`x_3`$); en Python/NumPy el índice empieza en 0 (`x[2]`). Son lenguajes distintos y hay que manejar ambos.
 
 ### Práctica 1 (diapositivas 5–6) — soluciones
 
 | Ejercicio | Planteamiento | Resultado |
 |-----------|---------------|-----------|
-| a | $\mathbf{v}=(-2,0,7,1,5)$: contar componentes | $n=5$, $\mathbf{v}\in\mathbb{R}^5$, $v_4=1$ |
+| a | $\mathbf{v}=(-2,0,7,1,5)$: contar componentes | $n=5$, $\mathbf{v}\in\mathbb{R}^5$, $`v_4=1`$ |
 | b | $(2a-1,\ b+3,\ c)=(5,0,-4)$ → $2a-1=5,\ b+3=0,\ c=-4$ | $(a,b,c)=(3,-3,-4)$ |
 | c | Clienta de 29 años, ingreso 850 (miles), 6 compras, 14 meses: $\mathbf{x}=(29,850,6,14)$ con orden (edad, ingreso, compras, meses) | Dimensión 4, punto en $\mathbb{R}^4$ |
-| d | $(1,2)$ vs $(2,1)$: misma dimensión, $u_1\neq v_1$. $(1,2)$ vs $(1,2,0)$: $\mathbb{R}^2$ vs $\mathbb{R}^3$ | Ninguno es igual |
+| d | $(1,2)$ vs $(2,1)$: misma dimensión, $`u_1\neq v_1`$. $(1,2)$ vs $(1,2,0)$: $\mathbb{R}^2$ vs $\mathbb{R}^3$ | Ninguno es igual |
 
 - Para indicar dimensión se escribe $n=5$; para indicar el espacio, $\mathbf{v}\in\mathbb{R}^5$. El nombre del vector puede ser cualquier letra.
 - Si cambia el orden de las variables, cambia el vector.
@@ -88,7 +92,9 @@ $$\mathbf{u} = \mathbf{v} \iff u_i = v_i \quad \forall i$$
 
 Con solo dos operaciones, **suma** y **multiplicación por un escalar**, se construye todo el álgebra lineal del curso.
 
-$$\mathbf{u} \pm \mathbf{v} = (u_1 \pm v_1,\ \ldots,\ u_n \pm v_n) \qquad k\,\mathbf{u} = (ku_1,\ \ldots,\ ku_n)$$
+```math
+\mathbf{u} \pm \mathbf{v} = (u_1 \pm v_1,\ \ldots,\ u_n \pm v_n) \qquad k\,\mathbf{u} = (ku_1,\ \ldots,\ ku_n)
+```
 
 ### Reglas
 
@@ -101,7 +107,7 @@ $$\mathbf{u} \pm \mathbf{v} = (u_1 \pm v_1,\ \ldots,\ u_n \pm v_n) \qquad k\,\ma
 
 - $\mathbf{u}+\mathbf{v}$: poner una flecha tras otra; es la **diagonal del paralelogramo** formado por $\mathbf{u}$ y $\mathbf{v}$.
 - $\mathbf{u}-\mathbf{v}$: la flecha que va de $\mathbf{v}$ hasta $\mathbf{u}$.
-- **Escalar** por $k$: $k>1$ estira; $0<k<1$ encoge (equivale a dividir); $k<0$ invierte el sentido. La recta que contiene al vector no cambia.
+- **Escalar** por $k$: $`k>1`$ estira; $`0<k<1`$ encoge (equivale a dividir); $`k<0`$ invierte el sentido. La recta que contiene al vector no cambia.
 - Solo se grafican vectores de $\mathbb{R}^2$ y $\mathbb{R}^3$ (eje $z$ como tercera dimensión). En más de 3 dimensiones no hay representación directa; se usan técnicas de reducción de dimensiones. En la práctica de IA se trabaja con decenas o cientos de dimensiones.
 
 **Conexión con ML:** "escalar" variables (p. ej. `scaler` en scikit-learn) busca que magnitudes muy distintas (salario vs. ahorro) se parezcan, para que el modelo no dé más importancia a una variable solo por tener números más grandes.
@@ -110,7 +116,9 @@ $$\mathbf{u} \pm \mathbf{v} = (u_1 \pm v_1,\ \ldots,\ u_n \pm v_n) \qquad k\,\ma
 
 **1. Suma y resta en $\mathbb{R}^2$.** $\mathbf{u}=(3,1)$, $\mathbf{v}=(1,2)$:
 
-$$\mathbf{u}+\mathbf{v}=(3+1,\ 1+2)=(4,3) \qquad \mathbf{u}-\mathbf{v}=(2,-1)$$
+```math
+\mathbf{u}+\mathbf{v}=(3+1,\ 1+2)=(4,3) \qquad \mathbf{u}-\mathbf{v}=(2,-1)
+```
 
 **2. Combinar operaciones en $\mathbb{R}^3$.** $\mathbf{u}=(2,-1,4)$, $\mathbf{v}=(1,3,0)$; calcular $3\mathbf{u}-2\mathbf{v}$:
 - Escalar: $3\mathbf{u}=(6,-3,12)$ y $2\mathbf{v}=(2,6,0)$.
@@ -145,11 +153,13 @@ Los axiomas de espacio vectorial permiten manipular vectores igual que números:
 | 5 | Distributiva sobre vectores | $k(\mathbf{u}+\mathbf{v})=k\mathbf{u}+k\mathbf{v}$ |
 | 6 | Distributiva sobre escalares | $(k+m)\mathbf{u}=k\mathbf{u}+m\mathbf{u}$ |
 | 7 | Asociativa de escalares | $k(m\mathbf{u})=(km)\mathbf{u}$ |
-| 8 | Identidad | $1\,\mathbf{u}=\mathbf{u}$ |
+| 8 | Identidad | $`1\,\mathbf{u}=\mathbf{u}`$ |
 
 **Fundamento.** Cada axioma se hereda de los números reales, porque se opera componente a componente y cada componente es un real. Ejemplo (conmutativa):
 
-$$\mathbf{u}+\mathbf{v}=(u_1+v_1,\ldots,u_n+v_n)=(v_1+u_1,\ldots,v_n+u_n)=\mathbf{v}+\mathbf{u}$$
+```math
+\mathbf{u}+\mathbf{v}=(u_1+v_1,\ldots,u_n+v_n)=(v_1+u_1,\ldots,v_n+u_n)=\mathbf{v}+\mathbf{u}
+```
 
 Un conjunto con suma y escalar que cumple los 8 axiomas es un **espacio vectorial**. $\mathbb{R}^n$ lo es, y también las matrices del mismo tamaño.
 
@@ -183,7 +193,9 @@ Una verificación numérica no demuestra un axioma; solo lo ilustra en un caso.
 - **c)** Despejar $\mathbf{x}$ en $2\mathbf{x}+\mathbf{a}=5\mathbf{b}-\mathbf{x}$ con $\mathbf{a}=(3,-6)$, $\mathbf{b}=(1,0)$, nombrando el axioma de cada paso (resultado: $\mathbf{x}=(\tfrac23,2)$).
 - **d)** Demostrar con solo los axiomas que $0\cdot\mathbf{u}=\mathbf{0}$. Pista: escribir $0=0+0$ y usar la distributiva sobre escalares:
 
-$$0\mathbf{u}=(0+0)\mathbf{u}=0\mathbf{u}+0\mathbf{u}\ \Rightarrow\ \text{sumar el opuesto de }0\mathbf{u}\ \Rightarrow\ \mathbf{0}=0\mathbf{u}$$
+```math
+0\mathbf{u}=(0+0)\mathbf{u}=0\mathbf{u}+0\mathbf{u}\ \Rightarrow\ \text{sumar el opuesto de }0\mathbf{u}\ \Rightarrow\ \mathbf{0}=0\mathbf{u}
+```
 
 Ejercicio adicional sugerido: probar $(-1)\mathbf{u}=-\mathbf{u}$ con la misma técnica.
 
@@ -203,11 +215,11 @@ Ejercicio adicional sugerido: probar $(-1)\mathbf{u}=-\mathbf{u}$ con la misma t
 ## Conceptos clave
 
 - **Vector:** lista ordenada de $n$ reales; $\mathbf{v}\in\mathbb{R}^n$; el orden importa.
-- **Componente y dimensión:** $v_i$ es la componente $i$; $n$ es la dimensión. Solo se operan vectores de igual dimensión.
+- **Componente y dimensión:** $`v_i`$ es la componente $i$; $n$ es la dimensión. Solo se operan vectores de igual dimensión.
 - **Igualdad:** misma dimensión y misma componente en cada posición; equivale a $n$ ecuaciones escalares.
 - **Indexación:** matemáticas desde 1, Python desde 0.
 - **Operaciones:** suma, resta y escalar, siempre componente a componente; primero escalares, luego sumas.
-- **Escalar $k$:** $k>1$ estira, $0<k<1$ encoge, $k<0$ invierte el sentido.
+- **Escalar $k$:** $`k>1`$ estira, $`0<k<1`$ encoge, $`k<0`$ invierte el sentido.
 - **Suma geométrica:** diagonal del paralelogramo; $\mathbf{u}-\mathbf{v}$ va de $\mathbf{v}$ a $\mathbf{u}$.
 - **Ocho axiomas:** cuatro de la suma, cuatro del escalar; heredados de $\mathbb{R}$; definen un espacio vectorial.
 - **Despejar:** sumar el opuesto, escalar por el inverso; nunca dividir entre un vector.

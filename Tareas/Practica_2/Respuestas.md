@@ -4,7 +4,7 @@
 
 | Concepto | Fórmula |
 |---|---|
-| Norma | $\lVert\mathbf{v}\rVert=\sqrt{\mathbf{v}\cdot\mathbf{v}}=\sqrt{v_1^2+\cdots+v_n^2}$ |
+| Norma | $`\lVert\mathbf{v}\rVert=\sqrt{\mathbf{v}\cdot\mathbf{v}}=\sqrt{v_1^2+\cdots+v_n^2}`$ |
 | Distancia | $d(\mathbf{u},\mathbf{v})=\lVert\mathbf{u}-\mathbf{v}\rVert$ |
 | Ángulo | $\cos\theta=\dfrac{\mathbf{u}\cdot\mathbf{v}}{\lVert\mathbf{u}\rVert\lVert\mathbf{v}\rVert}$ |
 | Ortogonalidad | $\mathbf{u}\perp\mathbf{v}\iff\mathbf{u}\cdot\mathbf{v}=0$ |
@@ -68,7 +68,7 @@ A-C=(1-0,\ 2-2,\ 3-5)=(1,\ 0,\ -2)
 d(A,C)=\sqrt{1+0+4}=\sqrt{5}\approx2{,}236
 ```
 
-Como $\sqrt5<3$, el punto **$C$ está más cerca de $A$**.
+Como $`\sqrt5<3`$, el punto **$C$ está más cerca de $A$**.
 
 **(c)** Se iguala la distancia a 5 y se eleva al cuadrado:
 
@@ -149,7 +149,7 @@ Coinciden ✓.
 
 **(c)** $\mathbf{u}=(-2,1)$, $\mathbf{v}=(3,4)$.
 
-Predicción por el signo: $\mathbf{u}\cdot\mathbf{v}=-6+4=-2<0$, por lo tanto el ángulo es **obtuso**.
+Predicción por el signo: $`\mathbf{u}\cdot\mathbf{v}=-6+4=-2<0`$, por lo tanto el ángulo es **obtuso**.
 
 Confirmación:
 
@@ -273,15 +273,15 @@ Las componentes de $\mathbf{r}$ son las desviaciones respecto a la media; $\lVer
 
 ## Ejercicio 8 — Combinación lineal
 
-**Datos:** $\mathbf{w}=(7,-7)$, $\mathbf{v}_1=(2,1)$, $\mathbf{v}_2=(1,-3)$.
+**Datos:** $\mathbf{w}=(7,-7)$, $`\mathbf{v}_1=(2,1)`$, $`\mathbf{v}_2=(1,-3)`$.
 
-**(a)** Se plantea $c_1(2,1)+c_2(1,-3)=(7,-7)$ y se separa por componentes:
+**(a)** Se plantea $`c_1(2,1)+c_2(1,-3)=(7,-7)`$ y se separa por componentes:
 
 ```math
 \begin{cases}2c_1+c_2=7 & (1)\\ c_1-3c_2=-7 & (2)\end{cases}
 ```
 
-**(b)** Sumar directamente no cancela nada. Se multiplica **toda** la ecuación (1) por 3 para que $c_2$ quede con coeficientes opuestos:
+**(b)** Sumar directamente no cancela nada. Se multiplica **toda** la ecuación (1) por 3 para que $`c_2`$ quede con coeficientes opuestos:
 
 ```math
 6c_1+3c_2=21\qquad(1')
@@ -293,7 +293,7 @@ Se suma (1') con (2), término a término:
 7c_1+0=14\ \Rightarrow\ c_1=2
 ```
 
-Se sustituye en (1): $2(2)+c_2=7\Rightarrow c_2=3$.
+Se sustituye en (1): $`2(2)+c_2=7\Rightarrow c_2=3`$.
 
 **(c)** Verificación:
 
@@ -301,7 +301,7 @@ Se sustituye en (1): $2(2)+c_2=7\Rightarrow c_2=3$.
 2(2,1)+3(1,-3)=(4,2)+(3,-9)=(7,-7)=\mathbf{w}\ \checkmark
 ```
 
-Resultado: $\mathbf{w}=2\mathbf{v}_1+3\mathbf{v}_2$.
+Resultado: $`\mathbf{w}=2\mathbf{v}_1+3\mathbf{v}_2`$.
 
 ---
 
@@ -315,10 +315,10 @@ Resultado: $\mathbf{w}=2\mathbf{v}_1+3\mathbf{v}_2$.
 
 **Sí está** en el generado: $(6,-3,9)=3(2,-1,3)$.
 
-**(b)** Se plantea $c_1(1,0,1)+c_2(0,1,1)=(x,y,z)$, es decir $c_1=x$, $c_2=y$, $c_1+c_2=z$.
+**(b)** Se plantea $`c_1(1,0,1)+c_2(0,1,1)=(x,y,z)`$, es decir $`c_1=x`$, $`c_2=y`$, $`c_1+c_2=z`$.
 
-- Para $(1,2,3)$: $c_1=1$, $c_2=2$, y la tercera ecuación $1+2=3$ ✓. **Sí es combinación lineal**: $(1,2,3)=1(1,0,1)+2(0,1,1)$.
-- Para $(1,2,4)$: $c_1=1$, $c_2=2$, pero la tercera pide $1+2=4$, que es falso. El sistema es inconsistente: **no es combinación lineal**.
+- Para $(1,2,3)$: $`c_1=1`$, $`c_2=2`$, y la tercera ecuación $1+2=3$ ✓. **Sí es combinación lineal**: $(1,2,3)=1(1,0,1)+2(0,1,1)$.
+- Para $(1,2,4)$: $`c_1=1`$, $`c_2=2`$, pero la tercera pide $1+2=4$, que es falso. El sistema es inconsistente: **no es combinación lineal**.
 
 **(c)** $\mathbf{u}=(1,1)$, $\mathbf{v}=(1,-1)$:
 
@@ -336,7 +336,7 @@ Con $\mathbf{w}=(5,1)$:
 c_1\mathbf{u}+c_2\mathbf{v}=3(1,1)+2(1,-1)=(3,3)+(2,-2)=(5,1)=\mathbf{w}\ \checkmark
 ```
 
-**(d)** Se parte de $\mathbf{w}=c_1\mathbf{u}+c_2\mathbf{v}$ y se hace el producto punto con $\mathbf{u}$ en ambos lados, usando distributiva y saca-escalares:
+**(d)** Se parte de $`\mathbf{w}=c_1\mathbf{u}+c_2\mathbf{v}`$ y se hace el producto punto con $\mathbf{u}$ en ambos lados, usando distributiva y saca-escalares:
 
 ```math
 \mathbf{w}\cdot\mathbf{u}=c_1(\mathbf{u}\cdot\mathbf{u})+c_2(\mathbf{v}\cdot\mathbf{u})
@@ -348,7 +348,7 @@ Como $\mathbf{u}\perp\mathbf{v}$, se tiene $\mathbf{v}\cdot\mathbf{u}=0$ y el se
 \mathbf{w}\cdot\mathbf{u}=c_1(\mathbf{u}\cdot\mathbf{u})\ \Rightarrow\ c_1=\frac{\mathbf{w}\cdot\mathbf{u}}{\mathbf{u}\cdot\mathbf{u}}\quad(\mathbf{u}\neq\mathbf{0})
 ```
 
-Lo mismo con $\mathbf{v}$ da $c_2$. Sin ortogonalidad, el término cruzado no se anula y habría que resolver un sistema de ecuaciones. Con ortogonalidad, cada coeficiente sale de una proyección independiente.
+Lo mismo con $\mathbf{v}$ da $`c_2`$. Sin ortogonalidad, el término cruzado no se anula y habría que resolver un sistema de ecuaciones. Con ortogonalidad, cada coeficiente sale de una proyección independiente.
 
 ---
 
@@ -357,10 +357,10 @@ Lo mismo con $\mathbf{v}$ da $c_2$. Sin ortogonalidad, el término cruzado no se
 | Vector | IA | Deportes | Datos | Cocina |
 |---|---|---|---|---|
 | $\mathbf{q}$ | 3 | 0 | 4 | 0 |
-| $\mathbf{d}_1$ | 6 | 0 | 8 | 0 |
-| $\mathbf{d}_2$ | 0 | 5 | 0 | 12 |
-| $\mathbf{d}_3$ | 4 | 3 | 0 | 0 |
-| $\mathbf{d}_4$ | 1 | 0 | 1 | 0 |
+| $`\mathbf{d}_1`$ | 6 | 0 | 8 | 0 |
+| $`\mathbf{d}_2`$ | 0 | 5 | 0 | 12 |
+| $`\mathbf{d}_3`$ | 4 | 3 | 0 | 0 |
+| $`\mathbf{d}_4`$ | 1 | 0 | 1 | 0 |
 
 **(a) Normas**
 
@@ -372,27 +372,27 @@ Lo mismo con $\mathbf{v}$ da $c_2$. Sin ortogonalidad, el término cruzado no se
 \lVert\mathbf{d}_3\rVert=\sqrt{16+9}=5\qquad\lVert\mathbf{d}_4\rVert=\sqrt{1+1}=\sqrt2\approx1{,}414
 ```
 
-El vector más largo es **$\mathbf{d}_2$** (norma 13), pero **no** es el más relevante: ni siquiera habla de los temas de la consulta (IA y datos). La norma mide cuánto texto o cuánta "cantidad" hay, no de qué trata.
+El vector más largo es **$`\mathbf{d}_2`$** (norma 13), pero **no** es el más relevante: ni siquiera habla de los temas de la consulta (IA y datos). La norma mide cuánto texto o cuánta "cantidad" hay, no de qué trata.
 
 **(b) Similitud coseno**
 
 | Documento | Producto punto con q | Similitud coseno |
 |---|---|---|
-| $\mathbf{d}_1$ | $18+0+32+0=50$ | $\dfrac{50}{5\cdot10}=1$ |
-| $\mathbf{d}_2$ | $0+0+0+0=0$ | $0$ |
-| $\mathbf{d}_3$ | $12+0+0+0=12$ | $\dfrac{12}{5\cdot5}=0{,}48$ |
-| $\mathbf{d}_4$ | $3+0+4+0=7$ | $\dfrac{7}{5\sqrt2}=\dfrac{7\sqrt2}{10}\approx0{,}990$ |
+| $`\mathbf{d}_1`$ | $18+0+32+0=50$ | $\dfrac{50}{5\cdot10}=1$ |
+| $`\mathbf{d}_2`$ | $0+0+0+0=0$ | $0$ |
+| $`\mathbf{d}_3`$ | $12+0+0+0=12$ | $\dfrac{12}{5\cdot5}=0{,}48$ |
+| $`\mathbf{d}_4`$ | $3+0+4+0=7$ | $\dfrac{7}{5\sqrt2}=\dfrac{7\sqrt2}{10}\approx0{,}990$ |
 
 La similitud coseno es $\cos\theta=\dfrac{\mathbf{q}\cdot\mathbf{d}}{\lVert\mathbf{q}\rVert\lVert\mathbf{d}\rVert}$ para cada documento $\mathbf{d}$.
 
 **(c) Ranking** (de más a menos relevante):
 
-1. $\mathbf{d}_1$ (cos = 1)
-2. $\mathbf{d}_4$ (cos ≈ 0,990)
-3. $\mathbf{d}_3$ (cos = 0,48)
-4. $\mathbf{d}_2$ (cos = 0)
+1. $`\mathbf{d}_1`$ (cos = 1)
+2. $`\mathbf{d}_4`$ (cos ≈ 0,990)
+3. $`\mathbf{d}_3`$ (cos = 0,48)
+4. $`\mathbf{d}_2`$ (cos = 0)
 
-El único ortogonal a $\mathbf{q}$ es **$\mathbf{d}_2$** ($\mathbf{q}\cdot\mathbf{d}_2=0$): no comparte ningún tema con la consulta (ella habla de IA y datos; el documento, de deportes y cocina). $\mathbf{d}_3$ no es ortogonal porque comparte el tema IA.
+El único ortogonal a $\mathbf{q}$ es **$`\mathbf{d}_2`$** ($`\mathbf{q}\cdot\mathbf{d}_2=0`$): no comparte ningún tema con la consulta (ella habla de IA y datos; el documento, de deportes y cocina). $`\mathbf{d}_3`$ no es ortogonal porque comparte el tema IA.
 
 **(d) Distancias**
 
@@ -404,9 +404,9 @@ El único ortogonal a $\mathbf{q}$ es **$\mathbf{d}_2$** ($\mathbf{q}\cdot\mathb
 \mathbf{q}-\mathbf{d}_4=(2,0,3,0)\ \Rightarrow\ d(\mathbf{q},\mathbf{d}_4)=\sqrt{4+9}=\sqrt{13}\approx3{,}606
 ```
 
-Según la distancia, **$\mathbf{d}_4$ queda más cerca** de $\mathbf{q}$. **No coincide** con el ranking del inciso (c), donde $\mathbf{d}_1$ es el primero.
+Según la distancia, **$`\mathbf{d}_4`$ queda más cerca** de $\mathbf{q}$. **No coincide** con el ranking del inciso (c), donde $`\mathbf{d}_1`$ es el primero.
 
-**(e)** La distancia mezcla dirección y longitud: $\mathbf{d}_1=2\mathbf{q}$ trata exactamente los mismos temas y en la misma proporción que la consulta, pero por ser un documento largo queda lejos. La similitud coseno depende solo del **ángulo** (la proporción de temas), no de la longitud; por eso un documento largo y uno corto con el mismo contenido reciben la misma similitud. Es la medida adecuada para comparar textos de distinta longitud.
+**(e)** La distancia mezcla dirección y longitud: $`\mathbf{d}_1=2\mathbf{q}`$ trata exactamente los mismos temas y en la misma proporción que la consulta, pero por ser un documento largo queda lejos. La similitud coseno depende solo del **ángulo** (la proporción de temas), no de la longitud; por eso un documento largo y uno corto con el mismo contenido reciben la misma similitud. Es la medida adecuada para comparar textos de distinta longitud.
 
 **(f) Normalización**
 

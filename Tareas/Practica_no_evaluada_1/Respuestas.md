@@ -6,7 +6,7 @@ Todas las respuestas coinciden con las respuestas finales del PDF.
 
 ## Ejercicio 1 — Leer e igualar vectores
 
-**(a)** $\mathbf{v}=(4,-1,0,7,2,-3)$ tiene 6 componentes: $n=6$ y $\mathbf{v}\in\mathbb{R}^6$. La componente 2 es $v_2=-1$ y la componente 5 es $v_5=2$.
+**(a)** $\mathbf{v}=(4,-1,0,7,2,-3)$ tiene 6 componentes: $n=6$ y $\mathbf{v}\in\mathbb{R}^6$. La componente 2 es $`v_2=-1`$ y la componente 5 es $`v_5=2`$.
 
 **(b)** Igualdad de vectores = una ecuación por posición:
 
@@ -155,21 +155,21 @@ Los coeficientes son $4$ y $5$.
 
 ## Ejercicio 6 — Combinación lineal con suma directa
 
-**Datos:** $\mathbf{w}=(7,1)$, $\mathbf{v}_1=(1,1)$, $\mathbf{v}_2=(2,-1)$.
+**Datos:** $\mathbf{w}=(7,1)$, $`\mathbf{v}_1=(1,1)`$, $`\mathbf{v}_2=(2,-1)`$.
 
-**(a)** Se plantea $c_1(1,1)+c_2(2,-1)=(7,1)$ y se separa por componentes:
+**(a)** Se plantea $`c_1(1,1)+c_2(2,-1)=(7,1)`$ y se separa por componentes:
 
 ```math
 \begin{cases}c_1+2c_2=7 & (1)\\ c_1-c_2=1 & (2)\end{cases}
 ```
 
-**(b)** La incógnita $c_1$ tiene el mismo coeficiente (1) y el mismo signo en ambas. Se restan las ecuaciones, (1) − (2):
+**(b)** La incógnita $`c_1`$ tiene el mismo coeficiente (1) y el mismo signo en ambas. Se restan las ecuaciones, (1) − (2):
 
 ```math
 (c_1+2c_2)-(c_1-c_2)=7-1\ \Rightarrow\ 3c_2=6\ \Rightarrow\ c_2=2
 ```
 
-**(c)** Se sustituye en (2): $c_1-2=1\Rightarrow c_1=3$.
+**(c)** Se sustituye en (2): $`c_1-2=1\Rightarrow c_1=3`$.
 
 Verificación:
 
@@ -177,13 +177,13 @@ Verificación:
 3(1,1)+2(2,-1)=(3,3)+(4,-2)=(7,1)=\mathbf{w}\ \checkmark
 ```
 
-Resultado: $\mathbf{w}=3\mathbf{v}_1+2\mathbf{v}_2$.
+Resultado: $`\mathbf{w}=3\mathbf{v}_1+2\mathbf{v}_2`$.
 
 ---
 
 ## Ejercicio 7 — Combinación lineal multiplicando antes de sumar
 
-**Datos:** $\mathbf{w}=(4,13)$, $\mathbf{v}_1=(2,3)$, $\mathbf{v}_2=(1,-2)$.
+**Datos:** $\mathbf{w}=(4,13)$, $`\mathbf{v}_1=(2,3)`$, $`\mathbf{v}_2=(1,-2)`$.
 
 **(a)**
 
@@ -191,7 +191,7 @@ Resultado: $\mathbf{w}=3\mathbf{v}_1+2\mathbf{v}_2$.
 \begin{cases}2c_1+c_2=4 & (1)\\ 3c_1-2c_2=13 & (2)\end{cases}
 ```
 
-**(b)** Al sumar directamente queda $5c_1-c_2=17$: ninguna incógnita desaparece porque los coeficientes ($c_1$: 2 y 3; $c_2$: 1 y $-2$) no son opuestos. Conviene **multiplicar la ecuación (1) completa por 2**, para que $c_2$ quede con coeficiente $2$ frente al $-2$ de (2).
+**(b)** Al sumar directamente queda $`5c_1-c_2=17`$: ninguna incógnita desaparece porque los coeficientes ($`c_1`$: 2 y 3; $`c_2`$: 1 y $-2$) no son opuestos. Conviene **multiplicar la ecuación (1) completa por 2**, para que $`c_2`$ quede con coeficiente $2$ frente al $-2$ de (2).
 
 **(c)**
 
@@ -205,7 +205,7 @@ Se suma (1') con (2):
 7c_1+0=21\ \Rightarrow\ c_1=3
 ```
 
-Se sustituye en (1): $2(3)+c_2=4\Rightarrow c_2=-2$.
+Se sustituye en (1): $`2(3)+c_2=4\Rightarrow c_2=-2`$.
 
 Verificación:
 
@@ -213,7 +213,7 @@ Verificación:
 3(2,3)-2(1,-2)=(6,9)+(-2,4)=(4,13)=\mathbf{w}\ \checkmark
 ```
 
-Resultado: $\mathbf{w}=3\mathbf{v}_1-2\mathbf{v}_2$ (un coeficiente negativo es válido: el vector se usa en sentido contrario).
+Resultado: $`\mathbf{w}=3\mathbf{v}_1-2\mathbf{v}_2`$ (un coeficiente negativo es válido: el vector se usa en sentido contrario).
 
 ---
 

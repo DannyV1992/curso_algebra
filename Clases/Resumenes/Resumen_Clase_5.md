@@ -13,11 +13,13 @@
 
 ## 1. Sistemas 2×2 por suma (guía de la clase)
 
-Cuando se buscan $c_1$ y $c_2$ tales que $c_1\mathbf{v}_1+c_2\mathbf{v}_2=\mathbf{w}$, **cada componente del vector da una ecuación**: dos incógnitas, dos igualdades. Es el mismo problema de la clase anterior (¿$\mathbf{w}$ está en el generado?), ahora con el método resuelto en detalle.
+Cuando se buscan $`c_1`$ y $`c_2`$ tales que $`c_1\mathbf{v}_1+c_2\mathbf{v}_2=\mathbf{w}`$, **cada componente del vector da una ecuación**: dos incógnitas, dos igualdades. Es el mismo problema de la clase anterior (¿$\mathbf{w}$ está en el generado?), ahora con el método resuelto en detalle.
 
 ### ¿Por qué se pueden sumar dos igualdades?
 
-$$A=B \ \text{ y } \ C=D \ \Longrightarrow\ A+C=B+D$$
+```math
+A=B \ \text{ y } \ C=D \ \Longrightarrow\ A+C=B+D
+```
 
 - Es como sumar lo mismo a ambos lados de una balanza equilibrada: sigue equilibrada. Es una propiedad (axioma) de la igualdad.
 - También se vale multiplicar una igualdad **completa** (ambos lados) por un número distinto de cero (p. ej. 3 o $-1$) para "preparar" la cancelación.
@@ -27,30 +29,32 @@ $$A=B \ \text{ y } \ C=D \ \Longrightarrow\ A+C=B+D$$
 
 | # | Paso | Qué se hace |
 |---|------|-------------|
-| 1 | Plantear | Escribir $c_1\mathbf{v}_1+c_2\mathbf{v}_2=\mathbf{w}$ con los vectores del enunciado |
+| 1 | Plantear | Escribir $`c_1\mathbf{v}_1+c_2\mathbf{v}_2=\mathbf{w}`$ con los vectores del enunciado |
 | 2 | Separar por componentes | Primera componente → ecuación (1); segunda → ecuación (2) |
 | 3 | Preparar y sumar | Lograr coeficientes opuestos en una incógnita, sumar y despejar la otra |
 | 4 | Sustituir | Reemplazar el valor hallado en una ecuación original y despejar la segunda incógnita |
-| 5 | Verificar | Calcular $c_1\mathbf{v}_1+c_2\mathbf{v}_2$ y comprobar que da exactamente $\mathbf{w}$ |
+| 5 | Verificar | Calcular $`c_1\mathbf{v}_1+c_2\mathbf{v}_2`$ y comprobar que da exactamente $\mathbf{w}$ |
 
-### Ejercicio 1 (resuelto en clase): $\mathbf{w}=(5,1)$, $\mathbf{v}_1=(1,1)$, $\mathbf{v}_2=(1,-1)$
+### Ejercicio 1 (resuelto en clase): $\mathbf{w}=(5,1)$, $`\mathbf{v}_1=(1,1)`$, $`\mathbf{v}_2=(1,-1)`$
 
-$$c_1(1,1)+c_2(1,-1)=(5,1)\ \Rightarrow\ \begin{cases}c_1+c_2=5\\ c_1-c_2=1\end{cases}$$
+```math
+c_1(1,1)+c_2(1,-1)=(5,1)\ \Rightarrow\ \begin{cases}c_1+c_2=5\\ c_1-c_2=1\end{cases}
+```
 
-- El signo menos de $c_2$ viene de que la segunda componente de $\mathbf{v}_2$ es $-1$; si fuera $+1$, la ecuación llevaría $+c_2$.
-- Se suman las ecuaciones **término a término** (cada $c_1$ con $c_1$, cada $c_2$ con $c_2$, y los lados derechos entre sí): $2c_1+0=6\Rightarrow c_1=3$.
-- Si una letra aparece sola, su coeficiente es 1 ($c_1+c_1=2c_1$): regla básica del álgebra.
-- Sustituir en (1): $3+c_2=5\Rightarrow c_2=2$.
-- Verificación: $3(1,1)+2(1,-1)=(3,3)+(2,-2)=(5,1)$ ✓. Resultado: $\mathbf{w}=3\mathbf{v}_1+2\mathbf{v}_2$.
+- El signo menos de $`c_2`$ viene de que la segunda componente de $`\mathbf{v}_2`$ es $-1$; si fuera $+1$, la ecuación llevaría $`+c_2`$.
+- Se suman las ecuaciones **término a término** (cada $`c_1`$ con $`c_1`$, cada $`c_2`$ con $`c_2`$, y los lados derechos entre sí): $`2c_1+0=6\Rightarrow c_1=3`$.
+- Si una letra aparece sola, su coeficiente es 1 ($`c_1+c_1=2c_1`$): regla básica del álgebra.
+- Sustituir en (1): $`3+c_2=5\Rightarrow c_2=2`$.
+- Verificación: $3(1,1)+2(1,-1)=(3,3)+(2,-2)=(5,1)$ ✓. Resultado: $`\mathbf{w}=3\mathbf{v}_1+2\mathbf{v}_2`$.
 - Multiplicar los coeficientes por los vectores y sumar siempre produce un $\mathbf{w}$: ese conjunto de resultados alcanzables es el **generado**.
 
 ### ¿Qué hago antes de sumar? (ejercicios 2 y 3 de la guía)
 
 | Situación | Acción | Ejemplo de la guía |
 |-----------|--------|--------------------|
-| Coeficientes opuestos ($+c_2$ y $-c_2$) | Sumar directamente | Ej. 1 |
-| Coeficientes de distinto tamaño ($3c_2$ y $-c_2$) | Multiplicar una ecuación para igualar tamaños con signo opuesto | Ej. 2: $\mathbf{w}=(10,6)$, $\mathbf{v}_1=(1,2)$, $\mathbf{v}_2=(3,-1)$ → multiplicar (2) por 3 → $c_1=4,\ c_2=2$ |
-| Mismo coeficiente y mismo signo ($+c_2$ y $+c_2$) | Multiplicar una ecuación por $-1$ | Ej. 3: $\mathbf{w}=(4,7)$, $\mathbf{v}_1=(2,3)$, $\mathbf{v}_2=(1,1)$ → $c_1=3,\ c_2=-2$ |
+| Coeficientes opuestos ($`+c_2`$ y $`-c_2`$) | Sumar directamente | Ej. 1 |
+| Coeficientes de distinto tamaño ($`3c_2`$ y $`-c_2`$) | Multiplicar una ecuación para igualar tamaños con signo opuesto | Ej. 2: $\mathbf{w}=(10,6)$, $`\mathbf{v}_1=(1,2)`$, $`\mathbf{v}_2=(3,-1)`$ → multiplicar (2) por 3 → $`c_1=4,\ c_2=2`$ |
+| Mismo coeficiente y mismo signo ($`+c_2`$ y $`+c_2`$) | Multiplicar una ecuación por $-1$ | Ej. 3: $\mathbf{w}=(4,7)$, $`\mathbf{v}_1=(2,3)`$, $`\mathbf{v}_2=(1,1)`$ → $`c_1=3,\ c_2=-2`$ |
 
 - **Errores comunes:** multiplicar solo un lado de la ecuación (se multiplica todo, incluido el lado derecho); sumar sin haber preparado la cancelación (la incógnita se duplica en vez de desaparecer).
 - Un coeficiente negativo es válido: el vector se usa en sentido contrario.
@@ -60,10 +64,10 @@ $$c_1(1,1)+c_2(1,-1)=(5,1)\ \Rightarrow\ \begin{cases}c_1+c_2=5\\ c_1-c_2=1\end{
 
 ## 2. Producto punto: repaso y nuevas ideas (diapositivas 19–20)
 
-Se multiplica posición por posición y se suma: $\mathbf{u}\cdot\mathbf{v}=\sum u_iv_i$. Ejemplo: $\mathbf{u}=(2,-1,3)$, $\mathbf{v}=(4,5,-2)$ → $8-5-6=-3$. Propiedades: conmutativa, distributiva, saca escalares y positividad (ver clase 4).
+Se multiplica posición por posición y se suma: $`\mathbf{u}\cdot\mathbf{v}=\sum u_iv_i`$. Ejemplo: $\mathbf{u}=(2,-1,3)$, $\mathbf{v}=(4,5,-2)$ → $8-5-6=-3$. Propiedades: conmutativa, distributiva, saca escalares y positividad (ver clase 4).
 
 - **Dimensiones:** el producto punto solo se define entre vectores de la **misma dimensión**.
-- **Es la base de la predicción:** los pesos $\mathbf{w}=(0{,}5;\,2;\,-1)$ y la observación $\mathbf{x}=(10,3,4)$ dan $\hat y=\mathbf{w}\cdot\mathbf{x}=5+6-4=7$. Ambos vectores deben tener el mismo número de componentes: un peso por cada variable.
+- **Es la base de la predicción:** los pesos $`\mathbf{w}=(0{,}5;\,2;\,-1)`$ y la observación $\mathbf{x}=(10,3,4)$ dan $\hat y=\mathbf{w}\cdot\mathbf{x}=5+6-4=7$. Ambos vectores deben tener el mismo número de componentes: un peso por cada variable.
 
 ### Cómo se obtienen los pesos (contexto de IA)
 
@@ -103,7 +107,9 @@ Con $\mathbf{a}=(1,2,-3)$, $\mathbf{b}=(4,-1,2)$, $\mathbf{c}=(0,3,1)$. Escribir
 
 ### Norma euclidiana
 
-$$\lVert\mathbf{v}\rVert=\sqrt{\mathbf{v}\cdot\mathbf{v}}=\sqrt{v_1^2+v_2^2+\cdots+v_n^2}$$
+```math
+\lVert\mathbf{v}\rVert=\sqrt{\mathbf{v}\cdot\mathbf{v}}=\sqrt{v_1^2+v_2^2+\cdots+v_n^2}
+```
 
 - Se elevan los componentes al cuadrado, se suman y se saca la raíz. Es el teorema de Pitágoras generalizado a $n$ dimensiones.
 - La norma es una **longitud (distancia desde el origen)**, siempre positiva. Es la positividad de la propiedad 4.
@@ -120,11 +126,15 @@ El producto punto se calcula con sumas y productos, pero guarda información geo
 
 En el triángulo formado por $\mathbf{u}$, $\mathbf{v}$ y $\mathbf{u}-\mathbf{v}$:
 
-$$\lVert\mathbf{u}-\mathbf{v}\rVert^2=\lVert\mathbf{u}\rVert^2+\lVert\mathbf{v}\rVert^2-2\lVert\mathbf{u}\rVert\lVert\mathbf{v}\rVert\cos\theta$$
+```math
+\lVert\mathbf{u}-\mathbf{v}\rVert^2=\lVert\mathbf{u}\rVert^2+\lVert\mathbf{v}\rVert^2-2\lVert\mathbf{u}\rVert\lVert\mathbf{v}\rVert\cos\theta
+```
 
-Expandiendo el lado izquierdo con el producto punto: $(\mathbf{u}-\mathbf{v})\cdot(\mathbf{u}-\mathbf{v})=\lVert\mathbf{u}\rVert^2-2\,\mathbf{u}\cdot\mathbf{v}+\lVert\mathbf{v}\rVert^2$. Igualando ambas expresiones y cancelando queda la fórmula del ángulo:
+Expandiendo el lado izquierdo con el producto punto: $`(\mathbf{u}-\mathbf{v})\cdot(\mathbf{u}-\mathbf{v})=\lVert\mathbf{u}\rVert^2-2\,\mathbf{u}\cdot\mathbf{v}+\lVert\mathbf{v}\rVert^2`$. Igualando ambas expresiones y cancelando queda la fórmula del ángulo:
 
-$$\cos\theta=\frac{\mathbf{u}\cdot\mathbf{v}}{\lVert\mathbf{u}\rVert\,\lVert\mathbf{v}\rVert}$$
+```math
+\cos\theta=\frac{\mathbf{u}\cdot\mathbf{v}}{\lVert\mathbf{u}\rVert\,\lVert\mathbf{v}\rVert}
+```
 
 - Lo que importa **aprender** es esta fórmula; la deducción con la ley de cosenos es el porqué, no hace falta memorizarla.
 - $\theta$ es el ángulo que forman dos vectores que parten del mismo punto. Funciona igual en muchas dimensiones, aunque no se pueda visualizar.
@@ -133,16 +143,18 @@ $$\cos\theta=\frac{\mathbf{u}\cdot\mathbf{v}}{\lVert\mathbf{u}\rVert\,\lVert\mat
 
 | $\mathbf{u}\cdot\mathbf{v}$ | Ángulo $\theta$ | Tipo |
 |----------------------------|-----------------|------|
-| $>0$ | $<90^\circ$ | Agudo |
+| $`>0`$ | $`<90^\circ`$ | Agudo |
 | $=0$ | $=90^\circ$ | Recto (**ortogonales**) |
-| $<0$ | $>90^\circ$ | Obtuso |
+| $`<0`$ | $`>90^\circ`$ | Obtuso |
 
 - El signo se conoce **antes** de calcular $\theta$.
 - Ojo: un coseno de 0,707 es positivo, y el ángulo correspondiente (45°) es agudo. Lo que decide el tipo es el signo del producto punto; para ser obtuso el ángulo tiene que superar los 90°.
 
 ### Ortogonalidad
 
-$$\mathbf{u}\perp\mathbf{v}\iff\mathbf{u}\cdot\mathbf{v}=0$$
+```math
+\mathbf{u}\perp\mathbf{v}\iff\mathbf{u}\cdot\mathbf{v}=0
+```
 
 - Ortogonales = los vectores **no comparten ninguna dirección**. No hace falta calcular raíces ni ángulos para decidirlo.
 - Interpretación aplicada: ángulo cercano a 0° → vectores que se comportan de forma parecida (base para formar clústers); 90° → producto punto cero, no comparten información, no hay relación entre ellos.
@@ -179,14 +191,14 @@ Cuatro ejercicios, **evaluados** (ver tareas). Calculadora solo para el arcocose
 - **Pesos:** en una red neuronal arrancan aleatorios y los ajusta el entrenamiento; escalar las variables evita que una magnitud grande domine.
 - **Norma euclidiana:** $\lVert\mathbf{v}\rVert=\sqrt{\mathbf{v}\cdot\mathbf{v}}$; longitud siempre positiva; viene de Pitágoras.
 - **Ángulo:** $\cos\theta=\dfrac{\mathbf{u}\cdot\mathbf{v}}{\lVert\mathbf{u}\rVert\lVert\mathbf{v}\rVert}$.
-- **Signo del producto punto:** $>0$ agudo, $=0$ recto, $<0$ obtuso.
+- **Signo del producto punto:** $`>0`$ agudo, $=0$ recto, $`<0`$ obtuso.
 - **Ortogonalidad:** $\mathbf{u}\cdot\mathbf{v}=0$; para exigirla se iguala a cero y se despeja.
 
 ---
 
 ## Fuera del PDF — logística, tareas y metodología
 
-- **Verificación de subespacio (práctica 4, ejercicio d):** $S=\{(x,2x)\}$ es la recta $y=2x$ por el origen. Contiene al cero, es cerrado bajo la suma ($(a,2a)+(b,2b)=(a+b,2(a+b))$) y bajo los escalares (la recta pasa por el origen, así que escalar no saca el vector de ella). Por tanto es subespacio de $\mathbb{R}^2$. El docente muestra una visualización interactiva en HTML (vectores editables, 30 casos de prueba y explicación de qué es un subespacio) que se sube al campus virtual.
+- **Verificación de subespacio (práctica 4, ejercicio d):** $`S=\{(x,2x)\}`$ es la recta $y=2x$ por el origen. Contiene al cero, es cerrado bajo la suma ($(a,2a)+(b,2b)=(a+b,2(a+b))$) y bajo los escalares (la recta pasa por el origen, así que escalar no saca el vector de ella). Por tanto es subespacio de $\mathbb{R}^2$. El docente muestra una visualización interactiva en HTML (vectores editables, 30 casos de prueba y explicación de qué es un subespacio) que se sube al campus virtual.
 - **Práctica de repaso (no evaluada):** 10 ejercicios sobre vectores (concepto, dimensión, suma, resta, escalares); las hojas de respuesta se publican el viernes.
 - **Práctica 6 (evaluada):** los 4 ejercicios de la diapositiva 25; se entrega a los 3 días.
 - **Material en el campus:** guía de sistemas 2×2, el archivo HTML del subespacio y videos de repaso. La presentación completa ya está subida; se estudia hasta la diapositiva 30.
