@@ -2,7 +2,7 @@
 
 **Curso:** BCD3103 Álgebra Lineal y Ecuaciones Diferenciales · Ingeniería en Ciencia de Datos, Lead University
 **Semana:** 2 (la clase anterior fue feriado y esta la reemplaza)
-**PDF fuente:** `Clase 3.pdf` (53 diapositivas)
+**PDF fuente:** `Material del curso.pdf` (53 diapositivas)
 **Cobertura del PDF:** Parcial: diapositivas 1 a 14 de 53 (hasta «Práctica 3: verificar, despejar y demostrar»). No se saltó ninguna diapositiva del rango. El resto (combinación lineal, producto punto, matrices, regresión) queda para la siguiente clase; solo se anota la hoja de ruta al final.
 
 **Contexto.** Primera clase de contenido. El objetivo es adquirir el lenguaje matemático (notación, símbolos, vocabulario de demostración) que se usará en Modelado matemático y en los cursos de IA. Al terminar el bloque de vectores se debe poder calcular a mano lo que NumPy hace en una línea.
