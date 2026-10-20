@@ -50,7 +50,9 @@ c_1(1,1)+c_2(1,-1)=(5,1)
 \begin{cases}c_1+c_2=5\\ c_1-c_2=1\end{cases}
 ```
 
-**Paso 5: resolver.** Como $`c_2`$ aparece con signos opuestos, conviene sumar las ecuaciones: se cancela $`c_2`$.
+**Paso 5: resolver el sistema.** Se numeran las ecuaciones: (1) $`c_1+c_2=5`$ y (2) $`c_1-c_2=1`$. Hay dos métodos y ambos dan lo mismo.
+
+*Método 1: suma de ecuaciones.* Como $`c_2`$ aparece con signos opuestos ($`+c_2`$ y $`-c_2`$), al sumar las dos ecuaciones se cancela:
 
 ```math
 \begin{aligned}
@@ -60,9 +62,53 @@ c_1&=3
 \end{aligned}
 ```
 
-Se sustituye en la primera ecuación: $`3+c_2=5\Rightarrow c_2=2`$.
+Se sustituye en la ecuación (1): $`3+c_2=5\Rightarrow c_2=2`$.
 
-*Alternativa por sustitución:* de la primera, $`c_1=5-c_2`$; en la segunda queda $`(5-c_2)-c_2=1\Rightarrow 5-2c_2=1\Rightarrow c_2=2`$, y $`c_1=5-2=3`$. Da lo mismo.
+*Método 2: sustitución, paso a paso.* Se despeja una letra de una ecuación y se reemplaza en la **otra**, para que quede una sola incógnita.
+
+1. **Despejar $`c_1`$ de la ecuación (1).** En $`c_1+c_2=5`$ se resta $`c_2`$ de ambos lados:
+
+```math
+c_1=5-c_2
+```
+
+   Ahora se sabe que $`c_1`$ vale "5 menos $`c_2`$". Todavía no es un número, porque $`c_2`$ no se conoce.
+
+2. **Reemplazar en la ecuación (2).** En $`c_1-c_2=1`$ se cambia $`c_1`$ por $`(5-c_2)`$, entre paréntesis:
+
+```math
+(5-c_2)-c_2=1
+```
+
+   Se reemplaza en la otra ecuación, no en la misma: hacerlo en la misma deja una igualdad que siempre es cierta y no da información. Ahora la ecuación tiene una sola letra.
+
+3. **Juntar los términos con $`c_2`$.** $`-c_2-c_2`$ son dos veces $`-c_2`$, o sea $`-2c_2`$:
+
+```math
+5-2c_2=1
+```
+
+4. **Restar 5 a ambos lados:**
+
+```math
+-2c_2=1-5\ \Rightarrow\ -2c_2=-4
+```
+
+5. **Dividir ambos lados entre $-2$:**
+
+```math
+c_2=\frac{-4}{-2}=2
+```
+
+6. **Volver a $`c_1`$.** Con $`c_2=2`$ se usa el despeje del paso 1:
+
+```math
+c_1=5-c_2=5-2=3
+```
+
+7. **Comprobar en las dos ecuaciones originales:** (1) $`3+2=5`$ ✓ y (2) $`3-2=1`$ ✓.
+
+Ambos métodos dan $`c_1=3`$ y $`c_2=2`$. Se despeja primero $`c_1`$ porque no tiene número delante (su coeficiente es 1), lo que evita divisiones y fracciones.
 
 **Paso 6: verificar.** $3(1,1)+2(1,-1)=(3,3)+(2,-2)=(5,1)$ ✓.
 
@@ -70,31 +116,77 @@ Se sustituye en la primera ecuación: $`3+c_2=5\Rightarrow c_2=2`$.
 
 ### c) ¿Están $(2,4,6)$ y $(1,2,4)$ en el generado de $(1,2,3)$?
 
-Con **un solo vector** hay **un solo peso** $c$, pero una ecuación por cada posición. Se busca un $c$ que funcione en todas a la vez.
+**Qué se pregunta.** El generado de $(1,2,3)$ son todos los vectores que se obtienen multiplicando $(1,2,3)$ por algún número $c$ (los múltiplos de $(1,2,3)$). La pregunta es: ¿existe un número $c$ tal que $c\cdot(1,2,3)$ dé exactamente $(2,4,6)$? ¿Y otro que dé $(1,2,4)$?
 
-La mezcla es $c(1,2,3)=(c,\ 2c,\ 3c)$.
+Es el mismo tipo de pregunta de la parte b), pero más simple: hay **un solo vector**, así que hay **un solo peso** ($c$ en lugar de $`c_1`$ y $`c_2`$).
 
-**Caso $(2,4,6)$:**
+#### Paso 1: escribir la mezcla con la letra $c$
 
-| Posición | Ecuación | Valor de $c$ |
-|----------|----------|--------------|
+Multiplicar un vector por $c$ es multiplicar cada una de sus posiciones por $c$:
+
+```math
+c\cdot(1,2,3)=(1\cdot c,\ 2\cdot c,\ 3\cdot c)=(c,\ 2c,\ 3c)
+```
+
+Esta es la "forma general" de cualquier vector del generado: la primera posición vale $c$, la segunda vale $2c$ y la tercera vale $3c$. Todo vector del generado tiene esa forma, y los que no la tienen no están en él.
+
+#### Paso 2: comparar con el vector que se quiere obtener
+
+Dos vectores son iguales solo si coinciden **en cada posición**. Por eso, al igualar $(c,\ 2c,\ 3c)$ con el vector objetivo, sale **una ecuación por posición**: 3 posiciones, 3 ecuaciones, y todas con la misma incógnita $c$.
+
+#### Caso 1: el vector $(2,4,6)$
+
+Se iguala $(c,\ 2c,\ 3c)=(2,4,6)$ posición por posición:
+
+| Posición | Ecuación | Se despeja $c$ |
+|----------|----------|----------------|
 | 1 | $c=2$ | $c=2$ |
-| 2 | $2c=4$ | $c=2$ |
-| 3 | $3c=6$ | $c=2$ |
+| 2 | $2c=4$ | se divide entre 2: $c=2$ |
+| 3 | $3c=6$ | se divide entre 3: $c=2$ |
 
-Las tres piden el mismo $c=2$. **Sí está** en el generado: $2(1,2,3)=(2,4,6)$ ✓.
+#### Paso 3: revisar si las tres ecuaciones están de acuerdo
 
-**Caso $(1,2,4)$:**
+Las tres piden el mismo valor, $c=2$. No hay contradicción, así que existe un peso que funciona en todas las posiciones.
 
-| Posición | Ecuación | Valor de $c$ |
-|----------|----------|--------------|
+#### Paso 4: verificar
+
+$2\cdot(1,2,3)=(2,\ 4,\ 6)$ ✓.
+
+**Conclusión:** $(2,4,6)$ **sí está** en el generado de $(1,2,3)$, con peso $c=2$.
+
+#### Caso 2: el vector $(1,2,4)$
+
+Se iguala $(c,\ 2c,\ 3c)=(1,2,4)$ posición por posición:
+
+| Posición | Ecuación | Se despeja $c$ |
+|----------|----------|----------------|
 | 1 | $c=1$ | $c=1$ |
-| 2 | $2c=2$ | $c=1$ |
-| 3 | $3c=4$ | $`c=\tfrac43`$ |
+| 2 | $2c=2$ | se divide entre 2: $c=1$ |
+| 3 | $3c=4$ | se divide entre 3: $`c=\tfrac43`$ |
 
-Las dos primeras piden $c=1$ y la tercera pide $`c=\tfrac43`$. Un mismo $c$ no puede valer dos cosas: el sistema es **inconsistente** y $(1,2,4)$ **no está** en el generado (no cae sobre la recta de $(1,2,3)$).
+#### Paso 3: revisar si las tres ecuaciones están de acuerdo
 
-**Trampa de dimensiones:** un vector como $(2,4)$ no puede estar en el generado de vectores de $\mathbb{R}^3$, porque tiene otra dimensión.
+- Las posiciones 1 y 2 piden $c=1$.
+- La posición 3 pide $`c=\tfrac43`$.
+
+Un mismo número no puede valer $1$ y $`\tfrac43`$ a la vez. Las ecuaciones se contradicen: el sistema es **inconsistente**.
+
+#### Paso 4: comprobar que de verdad falla
+
+- Si se usa $c=1$ (lo que piden las dos primeras posiciones): $1\cdot(1,2,3)=(1,2,3)$. La tercera posición da $3$, pero se necesitaba $4$.
+- Si se usa $`c=\tfrac43`$ (lo que pide la tercera): $`\tfrac43\cdot(1,2,3)=\left(\tfrac43,\ \tfrac83,\ 4\right)`$. La tercera posición ya da $4$, pero la primera da $`\tfrac43`$ y se necesitaba $1$.
+
+Ningún $c$ acierta las tres posiciones a la vez.
+
+**Conclusión:** $(1,2,4)$ **no está** en el generado de $(1,2,3)$. No se encuentra sobre la recta que forman los múltiplos de $(1,2,3)$.
+
+#### Qué recordar de este ejercicio
+
+- Con un solo vector no hay sistema que resolver con sustitución ni con suma: solo se despeja $c$ en **cada posición** y se comparan los resultados.
+- **Todos iguales** → el vector sí está en el generado (y ese valor es el peso).
+- **Alguno distinto** → el vector no está en el generado.
+
+**Trampa de dimensiones:** un vector como $(2,4)$ no puede estar en el generado de $(1,2,3)$, porque los vectores del generado tienen 3 componentes y $(2,4)$ tiene 2.
 
 ### d) ¿Es $`S=\{(x,2x)\}`$ un subespacio de $\mathbb{R}^2$?
 
