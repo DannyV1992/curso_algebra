@@ -116,7 +116,7 @@ Ambos métodos dan $`c_1=3`$ y $`c_2=2`$. Se despeja primero $`c_1`$ porque no t
 
 ### c) ¿Están $(2,4,6)$ y $(1,2,4)$ en el generado de $(1,2,3)$?
 
-**Qué se pregunta.** El generado de $(1,2,3)$ son todos los vectores que se obtienen multiplicando $(1,2,3)$ por algún número $c$ (los múltiplos de $(1,2,3)$). La pregunta es: ¿existe un número $c$ tal que $c\cdot(1,2,3)$ dé exactamente $(2,4,6)$? ¿Y otro que dé $(1,2,4)$?
+**Qué se pregunta.** El generado de $(1,2,3)$ son todos los vectores que se obtienen multiplicando $(1,2,3)$ por algún número $c$; es decir, son sus múltiplos. La pregunta es: ¿existe un número $c$ tal que $c\cdot(1,2,3)$ dé exactamente $(2,4,6)$? ¿Y otro que dé $(1,2,4)$?
 
 Es el mismo tipo de pregunta de la parte b), pero más simple: hay **un solo vector**, así que hay **un solo peso** ($c$ en lugar de $`c_1`$ y $`c_2`$).
 
