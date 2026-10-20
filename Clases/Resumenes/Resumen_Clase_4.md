@@ -50,19 +50,51 @@ $`c_1,\ldots,c_k`$ son los **coeficientes** (o pesos de la mezcla) y $`\mathbf{v
 - Los pesos son 3 y $-2$. El signo pertenece al coeficiente: se escalan los vectores (con un peso negativo si corresponde) y luego se suma siempre; el menos no cambia los vectores originales.
 - Para expresar la combinación se escribe cada coeficiente junto a su vector, con el resultado entre paréntesis.
 
-**2. ¿Es $\mathbf{w}$ combinación de $`\mathbf{v}_1`$ y $`\mathbf{v}_2`$?** $\mathbf{w}=(4,5)$, $`\mathbf{v}_1=(2,1)`$, $`\mathbf{v}_2=(1,2)`$. Hay que hallar los coeficientes $`c_1,c_2`$:
+**2. ¿Es $\mathbf{w}$ combinación de $`\mathbf{v}_1`$ y $`\mathbf{v}_2`$?** $\mathbf{w}=(4,5)$, $`\mathbf{v}_1=(2,1)`$, $`\mathbf{v}_2=(1,2)`$. Es el caso inverso al ejemplo 1: se conoce el resultado y hay que hallar los pesos $`c_1,c_2`$ (cuánto de cada vector hay que mezclar para obtener $\mathbf{w}$).
+
+*Paso 1: la misma cuenta del ejemplo 1, con letras.* Si los pesos fueran 1 y 2, la mezcla sería $1\cdot(2,1)+2\cdot(1,2)$. Como no se conocen, se escriben como incógnitas y se plantea que la mezcla dé $\mathbf{w}$:
+
+```math
+c_1(2,1)+c_2(1,2)=(4,5)
+```
+
+*Paso 2: multiplicar.* Cada componente se multiplica por su peso: $`c_1(2,1)=(2c_1,\ c_1)`$ y $`c_2(1,2)=(c_2,\ 2c_2)`$.
+
+*Paso 3: sumar posición por posición.* La mezcla queda $`(2c_1+c_2,\ c_1+2c_2)`$. La primera posición reúne las primeras posiciones de $`\mathbf{v}_1`$ (el 2) y de $`\mathbf{v}_2`$ (el 1); la segunda reúne las segundas (el 1 y el 2).
+
+*Paso 4: igualar con $\mathbf{w}$.* Dos vectores son iguales solo si coinciden en cada posición, así que cada posición da una ecuación:
 
 ```math
 \begin{cases}2c_1+c_2=4\\ c_1+2c_2=5\end{cases}
 ```
 
-- Se despeja $`c_1=5-2c_2`$ de la segunda ecuación y se sustituye en la primera: $`2(5-2c_2)+c_2=4\Rightarrow c_2=2`$, y entonces $`c_1=1`$.
-- Verificación: $1\cdot(2,1)+2\cdot(1,2)=(4,5)$. Resultado: $`\mathbf{w}=1\mathbf{v}_1+2\mathbf{v}_2`$.
+- Ningún número de las ecuaciones es nuevo: el coeficiente de $`c_1`$ sale de $`\mathbf{v}_1`$, el de $`c_2`$ de $`\mathbf{v}_2`$ (siempre de la misma posición), y el lado derecho es esa posición de $\mathbf{w}$.
+
+*Paso 5: resolver por sustitución.* Se despeja una incógnita de una ecuación y se reemplaza en la otra, para que quede una sola letra:
+
+```math
+\begin{aligned}
+c_1&=5-2c_2 &&\text{(se despeja } c_1 \text{ de la segunda ecuación)}\\
+2(5-2c_2)+c_2&=4 &&\text{(se reemplaza } c_1 \text{ en la primera)}\\
+10-4c_2+c_2&=4 &&\text{(se abre el paréntesis: } 2\cdot 5 \text{ y } 2\cdot(-2c_2))\\
+10-3c_2&=4 &&\text{(se juntan los términos con } c_2)\\
+-3c_2&=-6 &&\text{(se resta 10 a ambos lados)}\\
+c_2&=2 &&\text{(se divide entre } -3)\\
+c_1&=5-2\cdot 2=1 &&\text{(se vuelve a } c_1=5-2c_2)
+\end{aligned}
+```
+
+- Se despeja primero la incógnita que tiene coeficiente 1 (aquí $`c_1`$ en la segunda ecuación), porque no obliga a dividir ni produce fracciones. Despejar $`c_2`$ de la primera ($`c_2=4-2c_1`$) también sirve y da lo mismo.
+- Se reemplaza siempre en la **otra** ecuación; hacerlo en la misma deja una identidad sin información.
+- Comprobación en las ecuaciones originales: $2\cdot 1+2=4$ y $1+2\cdot 2=5$.
+
+*Paso 6: verificar.* $1\cdot(2,1)+2\cdot(1,2)=(2,1)+(2,4)=(4,5)$. Resultado: $`\mathbf{w}=1\mathbf{v}_1+2\mathbf{v}_2`$.
+
 - Si el sistema tiene solución, el vector está en el generado; si es inconsistente, no lo está.
 
 ### Cómo plantear el sistema (método general)
 
-1. Cada componente de la combinación da una ecuación: la primera coordenada de $`c_1\mathbf{v}_1+c_2\mathbf{v}_2`$ se iguala a la primera de $\mathbf{w}$, y así sucesivamente. Dos coeficientes desconocidos → dos ecuaciones.
+1. Cada componente de la combinación da una ecuación (ver pasos 1–4 del ejemplo 2). Dos coeficientes desconocidos → dos ecuaciones.
 2. **Sustitución:** despejar un coeficiente de una ecuación y reemplazarlo en la otra (método del ejemplo 2).
 3. **Suma de ecuaciones** (eliminación): sumar miembro a miembro las dos ecuaciones; si un coeficiente se cancela, queda una ecuación con una sola incógnita. Con $`c_1+c_2=5`$ y $`c_1-c_2=1`$: $`2c_1=6\Rightarrow c_1=3`$.
 4. Con un coeficiente conocido, se sustituye en cualquiera de las ecuaciones originales para obtener el otro ($`c_2=5-3=2`$).
