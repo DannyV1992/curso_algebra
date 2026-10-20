@@ -1,8 +1,8 @@
 # Clase 6 — Matrices: lectura, transpuesta, tipos especiales y operaciones básicas
 
-**Curso:** BCD3103 Álgebra Lineal y Ecuaciones Diferenciales · Ingeniería en Ciencia de Datos, Lead University
-**Semana:** 5
-**PDF fuente:** `Material del curso.pdf` (53 diapositivas, el mismo de las clases 3, 4 y 5)
+**Curso:** BCD3103 Álgebra Lineal y Ecuaciones Diferenciales · Ingeniería en Ciencia de Datos, Lead University\
+**Semana:** 5\
+**PDF fuente:** `Material del curso.pdf` (53 diapositivas, el mismo de las clases 3, 4 y 5)\
 **Cobertura del PDF:** Parcial: diapositivas 26 a 36 de 53 (hasta «Operar matrices entrada por entrada»). La clase anterior terminó en la diapositiva 25. Las diapositivas 26 a 30 (solución de la práctica 6 y proyección ortogonal) **no se trabajaron en la sesión** y se incluyen brevemente desde el PDF (sección 1). Las diapositivas 37–38 (práctica 9: operar y despejar matrices) y 39–40 en adelante (matriz por vector, producto de matrices, regresión) quedan para la siguiente clase.
 
 **Contexto.** Se abre el bloque de matrices, el concepto más relevante del curso para la inteligencia artificial: un dataset completo es una matriz, y las operaciones de la clase (sumar, escalar, transponer) son las mismas que con vectores, aplicadas entrada por entrada. Las matrices no son nuevas, pero son la base de gráficos 3D, hojas de cálculo, imágenes y redes neuronales.

@@ -1,8 +1,8 @@
 # Clase 4 — Combinación lineal, subespacios y producto punto
 
-**Curso:** BCD3103 Álgebra Lineal y Ecuaciones Diferenciales · Ingeniería en Ciencia de Datos, Lead University
-**Semana:** 3
-**PDF fuente:** `Material del curso.pdf` (53 diapositivas, el mismo de la clase 3)
+**Curso:** BCD3103 Álgebra Lineal y Ecuaciones Diferenciales · Ingeniería en Ciencia de Datos, Lead University\
+**Semana:** 3\
+**PDF fuente:** `Material del curso.pdf` (53 diapositivas, el mismo de la clase 3)\
 **Cobertura del PDF:** Parcial: diapositivas 15 a 20 de 53 (hasta «Calcular e interpretar el producto punto»). La clase anterior terminó en la diapositiva 14; el repaso inicial de la práctica 3 (diapositivas 13–14) se recoge al principio. La práctica del producto punto (diapositiva 21) y el resto quedan para la siguiente clase. No se saltó ninguna diapositiva del rango.
 
 **Contexto.** Se cierra el bloque de vectores: repaso de la tarea, combinaciones lineales, generado y subespacios, y primera aproximación al producto punto. Es la base para matrices y regresión. Lo visto hasta la diapositiva 20 debe dominarse antes de la próxima sesión.
