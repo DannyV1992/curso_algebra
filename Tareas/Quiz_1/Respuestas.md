@@ -64,7 +64,7 @@ Con la propiedad, usando $\lVert\mathbf{u}\rVert=7$ del inciso (a):
 \lvert-3\rvert\cdot\lVert\mathbf{u}\rVert=3\cdot7=21
 ```
 
-Ambos resultados son $21$ ✓. Multiplicar por un escalar $k$ multiplica la norma por $\lvert k\rvert$: el signo negativo invierte el sentido del vector pero no cambia su longitud.
+Ambos resultados son $21$ ✓. El signo negativo de $-3$ invierte el sentido del vector, pero su longitud solo se estira por el factor $3$.
 
 ---
 
@@ -280,7 +280,13 @@ Verificación, sustituyendo $k=-1$ en el primer vector:
 (-1,2,-1)\cdot(3,-1,-5)=(-1)(3)+2(-1)+(-1)(-5)=-3-2+5=0\ \checkmark
 ```
 
-**(c)** Se buscan $(x,y)$ con $(x,y)\cdot(3,4)=0$, es decir $3x+4y=0$. Una solución sencilla se obtiene intercambiando las componentes y cambiando el signo de una: $(-4,3)$, pues $3(-4)+4(3)=-12+12=0$.
+**(c)** Se buscan $(x,y)$ con $(x,y)\cdot(3,4)=0$, es decir $3x+4y=0$. Hay dos incógnitas y una sola ecuación, así que se elige el valor de una y se despeja la otra. Con $x=-4$:
+
+```math
+3(-4)+4y=0\ \Rightarrow\ -12+4y=0\ \Rightarrow\ 4y=12\ \Rightarrow\ y=3
+```
+
+El vector es $(-4,3)$. Verificación:
 
 ```math
 (3,4)\cdot(-4,3)=3(-4)+4(3)=-12+12=0\ \checkmark
@@ -365,6 +371,8 @@ Igualando con $(x,y,z)$ queda el sistema:
 ```math
 c_1=x,\qquad c_2=y,\qquad c_1+c_2=z
 ```
+
+Hay tres ecuaciones y solo dos incógnitas: las dos primeras dan $`c_1`$ y $`c_2`$, y la tercera comprueba si esos valores también funcionan en la última posición. Es la misma idea del generado de un solo vector, donde el mismo $c$ debe servir en todas las posiciones.
 
 - **Para $(1,2,3)$:** las dos primeras ecuaciones dan $`c_1=1`$ y $`c_2=2`$. Se prueba la tercera: $1+2=3$ ✓. **Sí es combinación lineal**:
 
