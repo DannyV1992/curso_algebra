@@ -64,7 +64,7 @@ Con la propiedad, usando $\lVert\mathbf{u}\rVert=9$ del inciso (a):
 \lvert-2\rvert\cdot\lVert\mathbf{u}\rVert=2\cdot9=18
 ```
 
-Ambos resultados son $18$ ✓. Multiplicar por un escalar $k$ multiplica la norma por $\lvert k\rvert$: el signo negativo invierte el sentido del vector pero no cambia su longitud.
+Ambos resultados son $18$ ✓. El signo negativo de $-2$ invierte el sentido del vector, pero su longitud solo se estira por el factor $2$.
 
 **(c)** Se escribe la norma con $k$ y se iguala a 13:
 
@@ -308,7 +308,13 @@ Verificación, sustituyendo $k=1$ en ambos vectores:
 (2,1,-1)\cdot(1,4,6)=2(1)+1(4)+(-1)(6)=2+4-6=0\ \checkmark
 ```
 
-**(c)** Se buscan $(x,y)$ con $(x,y)\cdot(5,-2)=0$, es decir $5x-2y=0$. Una solución sencilla se obtiene intercambiando las componentes y cambiando el signo de una: $(2,5)$, pues $5(2)-2(5)=0$.
+**(c)** Se buscan $(x,y)$ con $(x,y)\cdot(5,-2)=0$, es decir $5x-2y=0$. Hay dos incógnitas y una sola ecuación, así que se elige el valor de una y se despeja la otra. Con $x=2$:
+
+```math
+5(2)-2y=0\ \Rightarrow\ 10-2y=0\ \Rightarrow\ 10=2y\ \Rightarrow\ y=5
+```
+
+El vector es $(2,5)$. Verificación:
 
 ```math
 (2,5)\cdot(5,-2)=2(5)+5(-2)=10-10=0\ \checkmark
@@ -419,6 +425,8 @@ Igualando con $(x,y,z)$ queda el sistema:
 ```math
 c_1=x,\qquad c_2=y,\qquad2c_1+c_2=z
 ```
+
+Hay tres ecuaciones y solo dos incógnitas: las dos primeras dan $`c_1`$ y $`c_2`$, y la tercera comprueba si esos valores también funcionan en la última posición. Es la misma idea del generado de un solo vector, donde el mismo $c$ debe servir en todas las posiciones.
 
 - **Para $(3,1,5)$:** las dos primeras ecuaciones dan $`c_1=3`$ y $`c_2=1`$. Se prueba la tercera: $2(3)+1=7$, pero el vector pide $5$, y $7\neq5$. El sistema es inconsistente, así que **no es combinación lineal**.
 - **Para $(2,3,7)$:** $`c_1=2`$ y $`c_2=3`$. Se prueba la tercera: $2(2)+3=4+3=7$ ✓. **Sí es combinación lineal**:
@@ -565,7 +573,7 @@ Comparando entrada por entrada, cada entrada de $C^T$ es la opuesta de la de $C$
 C^T=-C
 ```
 
-En general $`c_{ji}=j-i=-(i-j)=-c_{ij}`$. Una matriz con esta propiedad se llama **antisimétrica**, y por eso su diagonal es cero.
+En general $`c_{ji}=j-i=-(i-j)=-c_{ij}`$, por eso al transponer cada entrada cambia de signo. La diagonal no cambia porque vale cero: $`c_{ii}=i-i=0`$.
 
 ---
 
@@ -633,10 +641,16 @@ Luego se restan entrada por entrada:
 2A-3B=\begin{bmatrix}4-6&-2-15&6-(-9)\\0-6&8-(-6)&-4-12\end{bmatrix}=\begin{bmatrix}-2&-17&15\\-6&14&-16\end{bmatrix}
 ```
 
-**(c)** Se despeja $X$ de la ecuación:
+**(c)** Se despeja $X$ igual que con vectores. Primero se suma el opuesto de $A$ a ambos lados:
 
 ```math
-A+2X=B\ \Rightarrow\ 2X=B-A\ \Rightarrow\ X=\tfrac12(B-A)
+A+2X=B\ \Rightarrow\ A+2X-A=B-A\ \Rightarrow\ 2X=B-A
+```
+
+Luego se multiplica ambos lados por $\tfrac12$. Como no existe la división entre matrices, el escalar $2$ se quita multiplicando por su inverso, $\tfrac12$.
+
+```math
+X=\tfrac12(B-A)
 ```
 
 Primero $B-A$, entrada por entrada:
