@@ -170,15 +170,7 @@ Luego el producto punto con $\mathbf{c}$:
 (\mathbf{a}+\mathbf{b})\cdot\mathbf{c}=(-1)(1)+4(2)+5(-2)=-1+8-10=-3
 ```
 
-Lado derecho. Se calcula cada producto por separado y se suman:
-
-```math
-\mathbf{a}\cdot\mathbf{c}=2(1)+(-1)(2)+4(-2)=2-2-8=-8
-```
-
-```math
-\mathbf{b}\cdot\mathbf{c}=(-3)(1)+5(2)+1(-2)=-3+10-2=5
-```
+Lado derecho. Se usan los productos del inciso (a) y se suman:
 
 ```math
 \mathbf{a}\cdot\mathbf{c}+\mathbf{b}\cdot\mathbf{c}=-8+5=-3
@@ -198,7 +190,7 @@ Lado izquierdo. Primero se escala $\mathbf{a}$:
 (-3\mathbf{a})\cdot\mathbf{b}=(-6)(-3)+3(5)+(-12)(1)=18+15-12=21
 ```
 
-Lado derecho. Se usa $\mathbf{a}\cdot\mathbf{b}=2(-3)+(-1)(5)+4(1)=-6-5+4=-7$ del inciso (a):
+Lado derecho. Se usa $\mathbf{a}\cdot\mathbf{b}=-7$ del inciso (a):
 
 ```math
 -3(\mathbf{a}\cdot\mathbf{b})=-3(-7)=21
@@ -234,10 +226,10 @@ Producto punto y normas:
 \lVert\mathbf{u}\rVert=\sqrt{1^2+2^2}=\sqrt{1+4}=\sqrt5\qquad\lVert\mathbf{v}\rVert=\sqrt{3^2+1^2}=\sqrt{9+1}=\sqrt{10}
 ```
 
-Se sustituye en la fórmula del coseno. Se usa $\sqrt5\cdot\sqrt{10}=\sqrt{50}$ y $\sqrt{50}=\sqrt{25\cdot2}=5\sqrt2$:
+Se sustituye en la fórmula del coseno. Se usa $\sqrt5\cdot\sqrt{10}=\sqrt{50}$ y $\sqrt{50}=\sqrt{25\cdot2}=5\sqrt2$, y luego se racionaliza multiplicando arriba y abajo por $\sqrt2$:
 
 ```math
-\cos\theta=\frac{5}{\sqrt5\cdot\sqrt{10}}=\frac{5}{\sqrt{50}}=\frac{5}{5\sqrt2}=\frac{1}{\sqrt2}=\frac{\sqrt2}{2}\approx0{,}707
+\cos\theta=\frac{5}{\sqrt5\cdot\sqrt{10}}=\frac{5}{\sqrt{50}}=\frac{5}{5\sqrt2}=\frac{1}{\sqrt2}=\frac{1\cdot\sqrt2}{\sqrt2\cdot\sqrt2}=\frac{\sqrt2}{2}\approx0{,}707
 ```
 
 El ángulo cuyo coseno es $\frac{\sqrt2}{2}$ es un valor conocido:
@@ -428,7 +420,7 @@ c_1=x,\qquad c_2=y,\qquad2c_1+c_2=z
 
 Hay tres ecuaciones y solo dos incógnitas: las dos primeras dan $`c_1`$ y $`c_2`$, y la tercera comprueba si esos valores también funcionan en la última posición. Es la misma idea del generado de un solo vector, donde el mismo $c$ debe servir en todas las posiciones.
 
-- **Para $(3,1,5)$:** las dos primeras ecuaciones dan $`c_1=3`$ y $`c_2=1`$. Se prueba la tercera: $2(3)+1=7$, pero el vector pide $5$, y $7\neq5$. El sistema es inconsistente, así que **no es combinación lineal**.
+- **Para $(3,1,5)$:** $`c_1=3`$ y $`c_2=1`$. Se prueba la tercera: $2(3)+1=7$, pero el vector pide $5$, y $7\neq5$. El sistema es inconsistente, así que **no es combinación lineal**.
 - **Para $(2,3,7)$:** $`c_1=2`$ y $`c_2=3`$. Se prueba la tercera: $2(2)+3=4+3=7$ ✓. **Sí es combinación lineal**:
 
 ```math

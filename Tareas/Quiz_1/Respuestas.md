@@ -374,13 +374,13 @@ c_1=x,\qquad c_2=y,\qquad c_1+c_2=z
 
 Hay tres ecuaciones y solo dos incógnitas: las dos primeras dan $`c_1`$ y $`c_2`$, y la tercera comprueba si esos valores también funcionan en la última posición. Es la misma idea del generado de un solo vector, donde el mismo $c$ debe servir en todas las posiciones.
 
-- **Para $(1,2,3)$:** las dos primeras ecuaciones dan $`c_1=1`$ y $`c_2=2`$. Se prueba la tercera: $1+2=3$ ✓. **Sí es combinación lineal**:
+- **Para $(1,2,3)$:** $`c_1=1`$ y $`c_2=2`$. Se prueba la tercera: $1+2=3$ ✓. **Sí es combinación lineal**:
 
 ```math
 1(1,0,1)+2(0,1,1)=(1,0,1)+(0,2,2)=(1,2,3)\ \checkmark
 ```
 
-- **Para $(1,2,4)$:** las dos primeras ecuaciones dan $`c_1=1`$ y $`c_2=2`$. Se prueba la tercera: $1+2=3$, pero el vector pide $4$, y $3\neq4$. El sistema es inconsistente, así que **no es combinación lineal**.
+- **Para $(1,2,4)$:** $`c_1=1`$ y $`c_2=2`$. Se prueba la tercera: $1+2=3$, pero el vector pide $4$, y $3\neq4$. El sistema es inconsistente, así que **no es combinación lineal**.
 
 ---
 
@@ -406,7 +406,7 @@ k(a,2a)=(ka,\ 2ka)=(ka,\ 2(ka))
 
 La segunda componente es el doble de la primera, así que el resultado tiene la forma $(x,2x)$ con $x=ka$. Por lo tanto, el resultado está en $S$.
 
-Se cumplen las tres condiciones, así que **$S$ es subespacio de $`\mathbb{R}^2`$** (geométricamente, es la recta $y=2x$ que pasa por el origen).
+Se cumplen las tres condiciones, así que **$S$ es subespacio de $`\mathbb{R}^2`$**.
 
 **(b)** $`T=\{(x,y):y=x+1\}`$. Para mostrar que no es subespacio basta un contraejemplo de una condición. Se prueba el vector cero:
 
@@ -419,8 +419,6 @@ También falla la suma, como segunda comprobación:
 - $(0,1)\in T$, porque $1=0+1$.
 - $(1,2)\in T$, porque $2=1+1$.
 - Su suma es $(0,1)+(1,2)=(1,3)$, y $3\neq1+1=2$, así que $(1,3)\notin T$.
-
-Una recta que no pasa por el origen nunca es subespacio.
 
 **(c)** $\mathbf{u}=(1,2)$, $\mathbf{v}=(-3,5)$, $k=4$.
 
@@ -455,8 +453,6 @@ k\mathbf{u}+k\mathbf{v}=(4+(-12),\ 8+20)=(-8,\ 28)
 ```
 
 Ambos dan $(-8,28)$ ✓.
-
-Una verificación numérica ilustra el axioma en un caso; no lo demuestra en general.
 
 ---
 
@@ -493,7 +489,7 @@ $`(A^T)_{41}`$ es la fila 4, columna 1 de $`A^T`$, que vale $5$. Por la definici
 B=\begin{bmatrix}1&4&-2\\4&0&5\\-2&5&3\end{bmatrix}\qquad B^T=\begin{bmatrix}1&4&-2\\4&0&5\\-2&5&3\end{bmatrix}
 ```
 
-Se comparan las entradas simétricas (las que están a ambos lados de la diagonal):
+Una matriz es simétrica si es igual a su transpuesta, es decir, si $`b_{ij}=b_{ji}`$ (lo que hay arriba de la diagonal se refleja abajo). Se comparan las entradas simétricas:
 
 - $`b_{12}=4`$ y $`b_{21}=4`$ ✓
 - $`b_{13}=-2`$ y $`b_{31}=-2`$ ✓
