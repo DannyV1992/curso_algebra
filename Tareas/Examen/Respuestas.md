@@ -64,7 +64,7 @@ Con la propiedad, usando $\lVert\mathbf{u}\rVert=9$ del inciso (a):
 \lvert-2\rvert\cdot\lVert\mathbf{u}\rVert=2\cdot9=18
 ```
 
-Ambos resultados son $18$ ✓. El signo negativo de $-2$ invierte el sentido del vector, pero su longitud solo se estira por el factor $2$.
+Ambos resultados son $18$ ✓.
 
 **(c)** Se escribe la norma con $k$ y se iguala a 13:
 
@@ -366,7 +366,7 @@ Igualando componente a componente (primera componente con primera, segunda con s
 \begin{cases}3c_1+c_2=3 & (1)\\ c_1-2c_2=8 & (2)\end{cases}
 ```
 
-**(b)** Sumar las ecuaciones directamente no cancela ninguna incógnita ($c_1+c_2$ y $c_1-2c_2$ no se anulan). Se multiplica **toda** la ecuación (1) por 2 para que $`c_2`$ y $`-2c_2`$ queden opuestos:
+**(b)** Sumar las ecuaciones directamente no cancela ninguna incógnita ($`3c_1+c_1`$ y $`c_2-2c_2`$ no se anulan). Se multiplica **toda** la ecuación (1) por 2 para que $`c_2`$ y $`-2c_2`$ queden opuestos:
 
 ```math
 2\cdot(3c_1+c_2)=2\cdot3\ \Rightarrow\ 6c_1+2c_2=6\qquad(1')

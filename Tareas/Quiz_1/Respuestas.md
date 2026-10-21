@@ -64,7 +64,7 @@ Con la propiedad, usando $\lVert\mathbf{u}\rVert=7$ del inciso (a):
 \lvert-3\rvert\cdot\lVert\mathbf{u}\rVert=3\cdot7=21
 ```
 
-Ambos resultados son $21$ ✓. El signo negativo de $-3$ invierte el sentido del vector, pero su longitud solo se estira por el factor $3$.
+Ambos resultados son $21$ ✓.
 
 ---
 
@@ -292,7 +292,7 @@ El vector es $(-4,3)$. Verificación:
 (3,4)\cdot(-4,3)=3(-4)+4(3)=-12+12=0\ \checkmark
 ```
 
-El vector $(-4,3)$ no es nulo, así que cumple lo pedido. Cualquier múltiplo no nulo de $(-4,3)$ también sirve (todos están en la recta perpendicular a $(3,4)$ por el origen); por ejemplo, el opuesto $(4,-3)$.
+El vector $(-4,3)$ no es nulo, así que cumple lo pedido. (También sirve el opuesto, $(4,-3)$.)
 
 ---
 
@@ -531,10 +531,10 @@ Luego se restan entrada por entrada:
 3A-2B=\begin{bmatrix}3-4&-6-2&0-(-2)\\9-0&12-(-6)&15-4\end{bmatrix}=\begin{bmatrix}-1&-8&2\\9&18&11\end{bmatrix}
 ```
 
-**(c)** Se despeja $X$ de la ecuación sumando el opuesto de $A$ en ambos lados:
+**(c)** Se despeja $X$ igual que con vectores: se suma el opuesto de $A$ a ambos lados:
 
 ```math
-A+X=B\ \Rightarrow\ X=B-A
+A+X=B\ \Rightarrow\ A+X-A=B-A\ \Rightarrow\ X=B-A
 ```
 
 Entrada por entrada:
