@@ -591,7 +591,7 @@ $`(B^T)_{32}`$ es la fila 3, columna 2 de $B^T$, que vale $-6$. Por la definici�
 
 **(c)** Una matriz es simétrica si es igual a su transpuesta, es decir, si $`m_{ij}=m_{ji}`$ (lo que hay arriba de la diagonal se refleja abajo).
 
-$D=\begin{bmatrix}1&2&-3\\2&0&5\\-3&5&4\end{bmatrix}$. Se comparan las entradas simétricas:
+$`D=\begin{bmatrix}1&2&-3\\2&0&5\\-3&5&4\end{bmatrix}`$. Se comparan las entradas simétricas:
 
 - $`d_{12}=2`$ y $`d_{21}=2`$ ✓
 - $`d_{13}=-3`$ y $`d_{31}=-3`$ ✓
@@ -599,9 +599,9 @@ $D=\begin{bmatrix}1&2&-3\\2&0&5\\-3&5&4\end{bmatrix}$. Se comparan las entradas 
 
 **$D$ sí es simétrica.**
 
-$E=\begin{bmatrix}1&2\\3&1\end{bmatrix}$: $`e_{12}=2`$ pero $`e_{21}=3`$, y $2\neq3$. **$E$ no es simétrica.**
+$`E=\begin{bmatrix}1&2\\3&1\end{bmatrix}`$: $`e_{12}=2`$ pero $`e_{21}=3`$, y $2\neq3$. **$E$ no es simétrica.**
 
-Para $\begin{bmatrix}1&x\\7&2\end{bmatrix}$, la entrada (1,2) vale $x$ y la (2,1) vale $7$. Para que sea simétrica deben ser iguales: **$x=7$**.
+Para $`\begin{bmatrix}1&x\\7&2\end{bmatrix}`$, la entrada (1,2) vale $x$ y la (2,1) vale $7$. Para que sea simétrica deben ser iguales: **$x=7$**.
 
 ---
 
