@@ -1,7 +1,7 @@
 # Prácticas de la Clase 6 — Matrices: lectura y transpuesta
 
 **Curso:** BCD3103 Álgebra Lineal y Ecuaciones Diferenciales · Ingeniería en Ciencia de Datos, Lead University\
-**Fuente:** `Material del curso.pdf`, diapositivas 33–34 (práctica 8)\
+**Fuente:** `1 - Material del curso.pdf`, diapositivas 33–34 (práctica 8)\
 **Resumen de la clase:** [Resumen_Clase_6.md](../Resumenes/Resumen_Clase_6.md)
 
 La solución de la práctica 6 (ángulos y ortogonalidad, diapositivas 25–26) está resuelta paso a paso en [Practicas_Clase_5.md](Practicas_Clase_5.md). La práctica 9 (operar y despejar matrices, diapositivas 37–38) se resuelve cuando se cubra en clase.

@@ -2,7 +2,7 @@
 
 **Curso:** BCD3103 Álgebra Lineal y Ecuaciones Diferenciales · Ingeniería en Ciencia de Datos, Lead University
 
-**Fuente:** `Material del curso.pdf`, diapositivas 37–38 (práctica 9), 41–42 (práctica 10) y 45–46 (práctica 11), más los ejemplos y los ejercicios «Ahora tú» de `Clase 7 - Guia_Matrices_Operar_Despejar_Multiplicar.pdf` y los ejercicios propuestos del notebook `Practica python.ipynb`
+**Fuente:** `1 - Material del curso.pdf`, diapositivas 37–38 (práctica 9), 41–42 (práctica 10) y 45–46 (práctica 11), más los ejemplos y los ejercicios «Ahora tú» de `3 - Guia_Matrices_Operar_Despejar_Multiplicar.pdf` y los ejercicios propuestos del notebook `Practica python.ipynb`
 
 **Resumen de la clase:** [Resumen_Clase_7.md](../Resumenes/Resumen_Clase_7.md)
 

@@ -1,7 +1,7 @@
 # Prácticas de la Clase 5 — Sistemas 2×2, producto punto, norma, ángulo y ortogonalidad
 
 **Curso:** BCD3103 Álgebra Lineal y Ecuaciones Diferenciales · Ingeniería en Ciencia de Datos, Lead University\
-**Fuente:** `Clase 5 - guia sistemas 2x2.pdf` (ejercicios 1 a 3) y `Material del curso.pdf`, diapositivas 21–22 (práctica 5) y 25 (práctica 6)\
+**Fuente:** `2 - Guia sistemas 2x2.pdf` (ejercicios 1 a 3) y `1 - Material del curso.pdf`, diapositivas 21–22 (práctica 5) y 25 (práctica 6)\
 **Resumen de la clase:** [Resumen_Clase_5.md](../Resumenes/Resumen_Clase_5.md)
 
 ---

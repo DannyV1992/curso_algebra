@@ -1,7 +1,7 @@
 # Prácticas de la Clase 3 — Vectores: componentes, operaciones y axiomas
 
 **Curso:** BCD3103 Álgebra Lineal y Ecuaciones Diferenciales · Ingeniería en Ciencia de Datos, Lead University\
-**Fuente:** `Material del curso.pdf`, diapositivas 5–6 (práctica 1), 9–10 (práctica 2) y 13–14 (práctica 3)\
+**Fuente:** `1 - Material del curso.pdf`, diapositivas 5–6 (práctica 1), 9–10 (práctica 2) y 13–14 (práctica 3)\
 **Resumen de la clase:** [Resumen_Clase_3.md](../Resumenes/Resumen_Clase_3.md)
 
 Cada ejercicio se resuelve paso a paso. Regla general: **antes de operar, preguntarse qué dimensión tiene cada vector**.

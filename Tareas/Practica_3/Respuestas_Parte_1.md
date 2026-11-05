@@ -74,10 +74,14 @@ A+B=\begin{bmatrix}3+(-1)&-2+4&1+2\\0+6&5+(-3)&-4+0\end{bmatrix}=\begin{bmatrix}
 A-B=\begin{bmatrix}3-(-1)&-2-4&1-2\\0-6&5-(-3)&-4-0\end{bmatrix}=\begin{bmatrix}4&-6&-1\\-6&8&-4\end{bmatrix}
 ```
 
-**(b)** Primero se escalan por separado:
+**(b)** Primero se multiplica cada entrada por el escalar, por separado:
 
 ```math
-3A=\begin{bmatrix}9&-6&3\\0&15&-12\end{bmatrix}\qquad 2B=\begin{bmatrix}-2&8&4\\12&-6&0\end{bmatrix}
+3A=\begin{bmatrix}3\cdot3&3(-2)&3\cdot1\\3\cdot0&3\cdot5&3(-4)\end{bmatrix}=\begin{bmatrix}9&-6&3\\0&15&-12\end{bmatrix}
+```
+
+```math
+2B=\begin{bmatrix}2(-1)&2\cdot4&2\cdot2\\2\cdot6&2(-3)&2\cdot0\end{bmatrix}=\begin{bmatrix}-2&8&4\\12&-6&0\end{bmatrix}
 ```
 
 Luego se suman:
@@ -99,7 +103,11 @@ A^T=\begin{bmatrix}3&0\\-2&5\\1&-4\end{bmatrix}\qquad B^T=\begin{bmatrix}-1&6\\4
 ```
 
 ```math
-3A^T=\begin{bmatrix}9&0\\-6&15\\3&-12\end{bmatrix}\qquad 2B^T=\begin{bmatrix}-2&12\\8&-6\\4&0\end{bmatrix}
+3A^T=\begin{bmatrix}3\cdot3&3\cdot0\\3(-2)&3\cdot5\\3\cdot1&3(-4)\end{bmatrix}=\begin{bmatrix}9&0\\-6&15\\3&-12\end{bmatrix}
+```
+
+```math
+2B^T=\begin{bmatrix}2(-1)&2\cdot6\\2\cdot4&2(-3)\\2\cdot2&2\cdot0\end{bmatrix}=\begin{bmatrix}-2&12\\8&-6\\4&0\end{bmatrix}
 ```
 
 ```math
@@ -143,7 +151,7 @@ X=\tfrac13\begin{bmatrix}6&6\\-6&3\end{bmatrix}=\begin{bmatrix}2&2\\-2&1\end{bma
 **(b)** Verificación: se sustituye $X$ en $3X+A$.
 
 ```math
-3X=\begin{bmatrix}6&6\\-6&3\end{bmatrix}
+3X=\begin{bmatrix}3\cdot2&3\cdot2\\3(-2)&3\cdot1\end{bmatrix}=\begin{bmatrix}6&6\\-6&3\end{bmatrix}
 ```
 
 ```math
@@ -159,18 +167,24 @@ X=\tfrac13\begin{bmatrix}6&6\\-6&3\end{bmatrix}=\begin{bmatrix}2&2\\-2&1\end{bma
 Se calcula $2B$ y luego la suma:
 
 ```math
-2B=\begin{bmatrix}16&10\\-4&12\end{bmatrix}
+2B=\begin{bmatrix}2\cdot8&2\cdot5\\2(-2)&2\cdot6\end{bmatrix}=\begin{bmatrix}16&10\\-4&12\end{bmatrix}
 ```
 
 ```math
 X=A+2B=\begin{bmatrix}2+16&-1+10\\4+(-4)&3+12\end{bmatrix}=\begin{bmatrix}18&9\\0&15\end{bmatrix}
 ```
 
-Verificación: se calcula cada lado de la ecuación original.
+Verificación: se calcula cada lado de la ecuación original. Lado izquierdo, primero $2X$:
 
 ```math
-2X-A=\begin{bmatrix}36&18\\0&30\end{bmatrix}-\begin{bmatrix}2&-1\\4&3\end{bmatrix}=\begin{bmatrix}34&19\\-4&27\end{bmatrix}
+2X=\begin{bmatrix}2\cdot18&2\cdot9\\2\cdot0&2\cdot15\end{bmatrix}=\begin{bmatrix}36&18\\0&30\end{bmatrix}
 ```
+
+```math
+2X-A=\begin{bmatrix}36-2&18-(-1)\\0-4&30-3\end{bmatrix}=\begin{bmatrix}34&19\\-4&27\end{bmatrix}
+```
+
+Lado derecho:
 
 ```math
 X+2B=\begin{bmatrix}18+16&9+10\\0+(-4)&15+12\end{bmatrix}=\begin{bmatrix}34&19\\-4&27\end{bmatrix}\ \checkmark
@@ -186,12 +200,29 @@ La capa tiene 3 neuronas y 2 entradas; cada fila de $W$ son los pesos de una neu
 W=\begin{bmatrix}3&1\\-1&2\\0&5\end{bmatrix}\qquad \mathbf{x}=(4,-2)\qquad \mathbf{b}=(1,-2,4)
 ```
 
-**(a)** $W$ es de tamaño **$3\times2$** y $\mathbf{x}$ tiene **2 componentes** ($\mathbf{x}\in\mathbb{R}^2$). El producto $W\mathbf{x}$ **sí está definido**: el número de columnas de $W$ (2) es igual al número de componentes de $\mathbf{x}$ (2). El resultado tiene tantos componentes como filas de $W$: es un vector de **3 componentes** (una salida por neurona), pues $(3\times2)\cdot(2)=(3)$.
+**(a)**
 
-**(b)** Por filas, cada componente es el producto punto de una fila de $W$ con $\mathbf{x}$:
+- $W$ tiene 3 filas (una por neurona) y 2 columnas (una por entrada): tamaño **$3\times2$**.
+- $\mathbf{x}$ tiene **2 componentes** ($\mathbf{x}\in\mathbb{R}^2$).
+- El producto $W\mathbf{x}$ **sí está definido**: el número de columnas de $W$ (2) es igual al número de componentes de $\mathbf{x}$ (2).
+- El resultado tiene tantos componentes como filas de $W$: es un vector de **3 componentes** (una salida por neurona), pues $(3\times2)\cdot(2)=(3)$.
+
+**(b)** Por filas, cada componente es el producto punto de una fila de $W$ con $\mathbf{x}$. Las filas de $W$ son $(3,1)$, $(-1,2)$ y $(0,5)$, y $\mathbf{x}=(4,-2)$:
 
 ```math
-W\mathbf{x}=\big(3\cdot4+1\cdot(-2),\ \ (-1)\cdot4+2\cdot(-2),\ \ 0\cdot4+5\cdot(-2)\big)=(12-2,\ -4-4,\ 0-10)=(10,\ -8,\ -10)
+(3,1)\cdot(4,-2)=3\cdot4+1\cdot(-2)=12-2=10
+```
+
+```math
+(-1,2)\cdot(4,-2)=(-1)\cdot4+2\cdot(-2)=-4-4=-8
+```
+
+```math
+(0,5)\cdot(4,-2)=0\cdot4+5\cdot(-2)=0-10=-10
+```
+
+```math
+W\mathbf{x}=(10,\ -8,\ -10)
 ```
 
 **(c)** Por columnas, $W\mathbf{x}$ es una combinación lineal de las columnas de $W$ con los componentes de $\mathbf{x}$ como coeficientes:
@@ -264,7 +295,7 @@ DC=\begin{bmatrix}1\cdot1+0\cdot0&1\cdot2+0\cdot1\\3\cdot1+1\cdot0&3\cdot2+1\cdo
 
 # Parte 2 — Ejercicios en Python
 
-Resuelta en [Practica_Evaluada_3_Python_Resuelta.ipynb](Practica_Evaluada_3_Python_Resuelta.ipynb), ejecutada de arriba abajo con todas las verificaciones (`assert`) en verde. Resultados principales:
+Resuelta en [Respuestas_Parte_2.ipynb](Respuestas_Parte_2.ipynb), ejecutada de arriba abajo con todas las verificaciones (`assert`) en verde. Resultados principales:
 
 | Ejercicio | Resultado |
 |---|---|

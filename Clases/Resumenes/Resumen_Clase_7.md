@@ -4,9 +4,9 @@
 
 **Semana:** 6
 
-**Material fuente:** `Material del curso.pdf` (53 diapositivas, el mismo de las clases 3 a 6), `Clase 7 - Guia_Matrices_Operar_Despejar_Multiplicar.pdf` (3 páginas) y el notebook `Practica python.ipynb`
+**Material fuente:** `1 - Material del curso.pdf` (53 diapositivas, el mismo de las clases 3 a 6), `3 - Guia_Matrices_Operar_Despejar_Multiplicar.pdf` (3 páginas) y el notebook `Practica python.ipynb`
 
-**Cobertura de los PDFs:** *Guía de matrices:* completa (páginas 1 a 3). Se proyectó en clase como apoyo y sus cuatro ejemplos (operar, despejar, matriz por vector y producto de matrices) están en las secciones 1, 2 y 6; los ejercicios «Ahora tú» de la página 3 quedan como práctica. *Material del curso.pdf:* Parcial: diapositivas 39 a 46 de 53 (hasta «Solución de la práctica 11»). La clase anterior terminó en la diapositiva 36. Las diapositivas 37–38 (práctica 9: operar y despejar) no se resolvieron sobre el PDF: esos temas se trabajaron con los ejemplos de la guía y del notebook (sección 1). La diapositiva 51 (laboratorio NumPy) se sustituyó por el notebook de la clase (sección 6). Las diapositivas 47–53 (regresión lineal como proyección ortogonal y cierre) quedan para la siguiente clase.
+**Cobertura de los PDFs:** *Guía de matrices:* completa (páginas 1 a 3). Se proyectó en clase como apoyo y sus cuatro ejemplos (operar, despejar, matriz por vector y producto de matrices) están en las secciones 1, 2 y 6; los ejercicios «Ahora tú» de la página 3 quedan como práctica. *1 - Material del curso.pdf:* Parcial: diapositivas 39 a 46 de 53 (hasta «Solución de la práctica 11»). La clase anterior terminó en la diapositiva 36. Las diapositivas 37–38 (práctica 9: operar y despejar) no se resolvieron sobre el PDF: esos temas se trabajaron con los ejemplos de la guía y del notebook (sección 1). La diapositiva 51 (laboratorio NumPy) se sustituyó por el notebook de la clase (sección 6). Las diapositivas 47–53 (regresión lineal como proyección ortogonal y cierre) quedan para la siguiente clase.
 
 **Nota sobre las fuentes:** el notebook repite los ejemplos de la guía. Varias cifras de la transcripción salieron mal reconocidas, así que todos los resultados se verificaron contra los dos PDFs y el notebook.
 

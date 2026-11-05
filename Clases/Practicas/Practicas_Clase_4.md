@@ -1,7 +1,7 @@
 # Prácticas de la Clase 4 — Combinación lineal, generado y subespacios
 
 **Curso:** BCD3103 Álgebra Lineal y Ecuaciones Diferenciales · Ingeniería en Ciencia de Datos, Lead University\
-**Fuente:** `Material del curso.pdf`, diapositivas 17–18 (práctica 4)\
+**Fuente:** `1 - Material del curso.pdf`, diapositivas 17–18 (práctica 4)\
 **Resumen de la clase:** [Resumen_Clase_4.md](../Resumenes/Resumen_Clase_4.md)
 
 Idea central: una **combinación lineal** multiplica cada vector por un peso y suma. Preguntar si $\mathbf{w}$ es combinación de unos vectores equivale a preguntar si $\mathbf{w}$ está en su **generado**, y se responde planteando un sistema con **una ecuación por componente**.

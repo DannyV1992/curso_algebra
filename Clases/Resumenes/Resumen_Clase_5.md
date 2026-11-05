@@ -2,10 +2,10 @@
 
 **Curso:** BCD3103 Álgebra Lineal y Ecuaciones Diferenciales · Ingeniería en Ciencia de Datos, Lead University\
 **Semana:** 4\
-**PDFs fuente:** `Clase 5 - guia sistemas 2x2.pdf` (7 páginas) y `Material del curso.pdf` (53 diapositivas, el mismo de las clases 3 y 4)\
+**PDFs fuente:** `2 - Guia sistemas 2x2.pdf` (7 páginas) y `1 - Material del curso.pdf` (53 diapositivas, el mismo de las clases 3 y 4)\
 **Cobertura de los PDFs:**
 - *Guía de sistemas 2×2:* completa (páginas 1 a 7). En clase solo se resolvió el ejercicio 1; los ejercicios 2 y 3 salen únicamente del PDF y quedaron como práctica.
-- *Clase 3 y 4.pdf:* Parcial: diapositivas 21 a 25 de 53 (hasta «Práctica 6: ángulos y ortogonalidad», que se deja de tarea). Las diapositivas 19–20 (producto punto) se repasaron al inicio. La diapositiva 26 (solución de la práctica 6) y la proyección ortogonal (27–30) no se trabajaron y quedan para la siguiente clase; matrices (31 en adelante) también.
+- *1 - Material del curso.pdf:* Parcial: diapositivas 21 a 25 de 53 (hasta «Práctica 6: ángulos y ortogonalidad», que se deja de tarea). Las diapositivas 19–20 (producto punto) se repasaron al inicio. La diapositiva 26 (solución de la práctica 6) y la proyección ortogonal (27–30) no se trabajaron y quedan para la siguiente clase; matrices (31 en adelante) también.
 
 **Contexto.** Se cierra el bloque de vectores: primero se resuelve a mano el sistema de dos ecuaciones que aparece al buscar coeficientes de una combinación lineal, y luego se completa el producto punto con la norma, el ángulo entre vectores y la ortogonalidad. Después viene matrices.
 
